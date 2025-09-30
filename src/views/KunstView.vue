@@ -7,10 +7,10 @@
           <v-col cols="12" lg="8" class="mx-auto text-center">
             <h1 class="jutta-heading mb-8">Meine Kunst</h1>
             <p class="text-xl text-jutta-700 leading-relaxed">
-              Hauptthema meiner Malerei ist, auch offen zu sein für scheinbar 
-              Nebensächliches wie Striche, Punkte und Farbschichtungen, aus denen 
-              sich plötzlich Landschaften, Figuren und Gegenstände formen und dem 
-              Betrachter weite Räume für Fantasie eröffnen.
+              Hauptthema meiner Malerei ist, auch offen zu sein für scheinbar
+              Nebensächliches wie Striche, Punkte und Farbschichtungen, aus
+              denen sich plötzlich Landschaften, Figuren und Gegenstände formen
+              und dem Betrachter weite Räume für Fantasie eröffnen.
             </p>
           </v-col>
         </v-row>
@@ -25,25 +25,25 @@
             <h2 class="jutta-subheading mb-8">
               Meine künstlerische Philosophie
             </h2>
-              <div class="space-y-6">
-                <p class="text-lg jutta-text">
-                  Künstlerisches Schaffen begleitet Jutta Horn ihr ganzes Leben. 
-                  Schon früh, bereits 1979, war ihr klar, dass der Schwerpunkt 
-                  ihrer künstlerischen Aktivitäten der Malerei gehört.
-                </p>
-                <p class="text-lg jutta-text">
-                  Ambitioniert erkundete sie die Bandbreite aller künstlerischer 
-                  Ausdrucksformen: ob Radierungen, Collagen, Druckverfahren oder 
-                  auch Holzschnitte und schuf sich so ein breites Portfolio an 
-                  Kenntnissen der Materialien und Maltechniken.
-                </p>
-                <p class="text-lg jutta-text">
-                  "Sich künstlerisch weiter zu entwickeln kann nicht heißen, nur 
-                  das Erreichte zu pflegen oder zu perfektionieren, sondern auch 
-                  das bekannte Terrain zu verlassen und stets nach neuen 
-                  Ausdrucksformen und Aussagemöglichkeiten zu suchen."
-                </p>
-              </div>
+            <div class="space-y-6">
+              <p class="text-lg jutta-text">
+                Künstlerisches Schaffen begleitet Jutta Horn ihr ganzes Leben.
+                Schon früh, bereits 1979, war ihr klar, dass der Schwerpunkt
+                ihrer künstlerischen Aktivitäten der Malerei gehört.
+              </p>
+              <p class="text-lg jutta-text">
+                Ambitioniert erkundete sie die Bandbreite aller künstlerischer
+                Ausdrucksformen: ob Radierungen, Collagen, Druckverfahren oder
+                auch Holzschnitte und schuf sich so ein breites Portfolio an
+                Kenntnissen der Materialien und Maltechniken.
+              </p>
+              <p class="text-lg jutta-text">
+                "Sich künstlerisch weiter zu entwickeln kann nicht heißen, nur
+                das Erreichte zu pflegen oder zu perfektionieren, sondern auch
+                das bekannte Terrain zu verlassen und stets nach neuen
+                Ausdrucksformen und Aussagemöglichkeiten zu suchen."
+              </p>
+            </div>
           </v-col>
 
           <v-col cols="12" lg="6">

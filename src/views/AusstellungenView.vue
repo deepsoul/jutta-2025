@@ -7,9 +7,10 @@
           <v-col cols="12" lg="8" class="mx-auto text-center">
             <h1 class="jutta-heading mb-8">Ausstellungen</h1>
             <p class="text-xl text-jutta-700 leading-relaxed">
-              Jutta Horn stellt ihre Werke regelmäßig in Gruppen- und Einzelausstellungen aus. 
-              Sie ist Mitglied im Kulturforum der Stadt Rutesheim, im ARTIFEX Kunstverein 
-              der neuen Art, in der Gruppe farbecht und in [KUN:ST] International, Leonberg.
+              Jutta Horn stellt ihre Werke regelmäßig in Gruppen- und
+              Einzelausstellungen aus. Sie ist Mitglied im Kulturforum der Stadt
+              Rutesheim, im ARTIFEX Kunstverein der neuen Art, in der Gruppe
+              farbecht und in [KUN:ST] International, Leonberg.
             </p>
           </v-col>
         </v-row>
@@ -147,8 +148,11 @@
       <v-container class="jutta-container">
         <v-row>
           <v-col cols="12" lg="8" class="mx-auto text-center">
-            <blockquote class="text-2xl lg:text-3xl font-serif italic text-jutta-700 mb-8">
-              "Im Entwurf, da zeigt sich das Talent, in der Ausführung die Kunst."
+            <blockquote
+              class="text-2xl lg:text-3xl font-serif italic text-jutta-700 mb-8"
+            >
+              "Im Entwurf, da zeigt sich das Talent, in der Ausführung die
+              Kunst."
             </blockquote>
             <p class="text-lg text-jutta-600">— Marie von Eber-Eschenbach</p>
           </v-col>
@@ -191,10 +195,11 @@ const currentExhibitions = [
     title: 'KUNSTAUSSTELLUNG "Retrospektive"',
     location: 'Rutesheimer Rathaus',
     dates: '07.04.2024 - 04.05.2024',
-    description: 'Jutta Horn & Gerda Steimle - Vernissage am 07.04.2024 um 11:15 Uhr',
+    description:
+      'Jutta Horn & Gerda Steimle - Vernissage am 07.04.2024 um 11:15 Uhr',
     website: 'https://www.kulturforum-rutesheim.de',
-    image: '/src/assets/images/retrospektive-2024.jpg'
-  }
+    image: '/src/assets/images/retrospektive-2024.jpg',
+  },
 ];
 
 const pastExhibitions = [

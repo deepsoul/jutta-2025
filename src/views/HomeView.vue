@@ -10,9 +10,9 @@
               <p
                 class="text-xl lg:text-2xl text-jutta-600 mb-8 leading-relaxed"
               >
-                Künstlerisches Schaffen begleitet Jutta Horn ihr ganzes Leben. 
-                Schon früh, bereits 1979, war ihr klar, dass der Schwerpunkt ihrer 
-                künstlerischen Aktivitäten der Malerei gehört.
+                Künstlerisches Schaffen begleitet Jutta Horn ihr ganzes Leben.
+                Schon früh, bereits 1979, war ihr klar, dass der Schwerpunkt
+                ihrer künstlerischen Aktivitäten der Malerei gehört.
               </p>
               <div class="flex flex-col sm:flex-row gap-4">
                 <v-btn
@@ -66,16 +66,16 @@
           <v-col cols="12" lg="8" class="mx-auto text-center">
             <h2 class="jutta-subheading mb-8">Über meine Kunst</h2>
             <p class="text-lg text-jutta-700 leading-relaxed mb-8">
-              Ambitioniert erkundete sie die Bandbreite aller künstlerischer 
-              Ausdrucksformen: ob Radierungen, Collagen, Druckverfahren oder auch 
-              Holzschnitte und schuf sich so ein breites Portfolio an Kenntnissen 
-              der Materialien und Maltechniken.
+              Ambitioniert erkundete sie die Bandbreite aller künstlerischer
+              Ausdrucksformen: ob Radierungen, Collagen, Druckverfahren oder
+              auch Holzschnitte und schuf sich so ein breites Portfolio an
+              Kenntnissen der Materialien und Maltechniken.
             </p>
             <p class="text-lg text-jutta-700 leading-relaxed">
-              Sie selbst beschreibt diesen fortwährenden Drang nach Neuem: 
-              "Sich künstlerisch weiter zu entwickeln kann nicht heißen, nur das 
-              Erreichte zu pflegen oder zu perfektionieren, sondern auch das 
-              bekannte Terrain zu verlassen und stets nach neuen Ausdrucksformen 
+              Sie selbst beschreibt diesen fortwährenden Drang nach Neuem: "Sich
+              künstlerisch weiter zu entwickeln kann nicht heißen, nur das
+              Erreichte zu pflegen oder zu perfektionieren, sondern auch das
+              bekannte Terrain zu verlassen und stets nach neuen Ausdrucksformen
               und Aussagemöglichkeiten zu suchen."
             </p>
           </v-col>
@@ -150,8 +150,11 @@
       <v-container class="jutta-container">
         <v-row>
           <v-col cols="12" lg="8" class="mx-auto text-center">
-            <blockquote class="text-2xl lg:text-3xl font-serif italic text-jutta-700 mb-8">
-              "Zugleich aus dem Leben gegriffen und zugleich typisch – das ist die höchste Kunst."
+            <blockquote
+              class="text-2xl lg:text-3xl font-serif italic text-jutta-700 mb-8"
+            >
+              "Zugleich aus dem Leben gegriffen und zugleich typisch – das ist
+              die höchste Kunst."
             </blockquote>
             <p class="text-lg text-jutta-600">— Christian Morgenstern</p>
           </v-col>
