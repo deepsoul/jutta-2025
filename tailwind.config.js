@@ -1,18 +1,16 @@
+import typography from '@tailwindcss/typography';
+
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    './index.html', 
-    './src/**/*.{vue,js,ts,jsx,tsx}',
-    './src/**/*.vue'
-  ],
+  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}', './src/**/*.vue'],
   theme: {
     extend: {
-            fontFamily: {
-              sans: ['Source Sans Pro', 'ui-sans-serif', 'system-ui'],
-              serif: ['Playfair Display', 'ui-serif', 'Georgia'],
-              display: ['Playfair Display', 'ui-serif', 'Georgia'],
-              body: ['Source Sans Pro', 'ui-sans-serif', 'system-ui'],
-            },
+      fontFamily: {
+        sans: ['Source Sans Pro', 'ui-sans-serif', 'system-ui'],
+        serif: ['Playfair Display', 'ui-serif', 'Georgia'],
+        display: ['Playfair Display', 'ui-serif', 'Georgia'],
+        body: ['Source Sans Pro', 'ui-sans-serif', 'system-ui'],
+      },
       colors: {
         jutta: {
           50: '#fafafa',
@@ -28,13 +26,13 @@ export default {
         },
       },
       screens: {
-        'sm': '640px',
-        'md': '768px',
-        'lg': '1024px',
-        'xl': '1280px',
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
         '2xl': '1536px',
       },
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [typography],
 };
