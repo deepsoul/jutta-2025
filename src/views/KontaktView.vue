@@ -304,18 +304,21 @@ const submitForm = async () => {
 
   try {
     // Send to PHP script on www.juttahorn.de
-    const response = await fetch('https://www.juttahorn.de/contact-form-simple.php', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
+    const response = await fetch(
+      'https://www.juttahorn.de/contact-form-simple.php',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: form.value.name,
+          email: form.value.email,
+          subject: form.value.subject,
+          message: form.value.message,
+        }),
       },
-      body: JSON.stringify({
-        name: form.value.name,
-        email: form.value.email,
-        subject: form.value.subject,
-        message: form.value.message,
-      }),
-    });
+    );
 
     const result = await response.json();
 
@@ -342,7 +345,9 @@ const submitForm = async () => {
       );
     } else {
       // Show error message
-      const errorMessage = result.details ? result.details.join(', ') : result.error || 'Unbekannter Fehler';
+      const errorMessage = result.details
+        ? result.details.join(', ')
+        : result.error || 'Unbekannter Fehler';
       alert(`Fehler beim Senden: ${errorMessage}`);
     }
   } catch (error) {
