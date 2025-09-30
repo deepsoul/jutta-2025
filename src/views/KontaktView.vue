@@ -289,7 +289,9 @@ const submitForm = async () => {
     }
   } catch (error) {
     console.error('Error submitting form:', error);
-    alert('Fehler beim Senden der Nachricht. Bitte versuchen Sie es später erneut.');
+    alert(
+      'Fehler beim Senden der Nachricht. Bitte versuchen Sie es später erneut.',
+    );
   } finally {
     formLoading.value = false;
   }

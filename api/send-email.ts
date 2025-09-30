@@ -1,26 +1,26 @@
-import { VercelRequest, VercelResponse } from '@vercel/node';
+import {VercelRequest, VercelResponse} from '@vercel/node';
 import nodemailer from 'nodemailer';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   // Only allow POST requests
   if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+    return res.status(405).json({error: 'Method not allowed'});
   }
 
   try {
-    const { name, email, subject, message } = req.body;
+    const {name, email, subject, message} = req.body;
 
     // Validate required fields
     if (!name || !email || !subject || !message) {
-      return res.status(400).json({ 
-        error: 'Missing required fields: name, email, subject, message' 
+      return res.status(400).json({
+        error: 'Missing required fields: name, email, subject, message',
       });
     }
 
     // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return res.status(400).json({ error: 'Invalid email format' });
+      return res.status(400).json({error: 'Invalid email format'});
     }
 
     // Create transporter using environment variables
@@ -118,15 +118,15 @@ Antworten Sie direkt auf diese E-Mail, um dem Absender zu antworten.
     // Send confirmation email
     await transporter.sendMail(confirmationOptions);
 
-    return res.status(200).json({ 
-      success: true, 
-      message: 'E-Mail erfolgreich gesendet' 
+    return res.status(200).json({
+      success: true,
+      message: 'E-Mail erfolgreich gesendet',
     });
-
   } catch (error) {
     console.error('Error sending email:', error);
-    return res.status(500).json({ 
-      error: 'Fehler beim Senden der E-Mail. Bitte versuchen Sie es später erneut.' 
+    return res.status(500).json({
+      error:
+        'Fehler beim Senden der E-Mail. Bitte versuchen Sie es später erneut.',
     });
   }
 }
