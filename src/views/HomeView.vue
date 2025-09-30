@@ -197,22 +197,22 @@ const imageLoaded = ref(true);
 
 const featuredWorks = [
   {
-    title: 'Zeit der Stille',
+    title: 'Kunstwerk 1',
     technique: 'Öl auf Leinwand',
-    year: '2024',
-    image: '/src/assets/images/werk-1.jpg',
+    year: '2022',
+    image: '/src/assets/images/jutta_horn_art_1.jpg',
   },
   {
-    title: 'Erinnerungen',
+    title: 'Kunstwerk 2',
     technique: 'Mischtechnik',
-    year: '2023',
-    image: '/src/assets/images/werk-2.jpg',
+    year: '2022',
+    image: '/src/assets/images/jutta_horn_art_2.jpg',
   },
   {
-    title: 'Naturgeist',
+    title: 'Kunstwerk 3',
     technique: 'Aquarell',
-    year: '2023',
-    image: '/src/assets/images/werk-3.jpg',
+    year: '2022',
+    image: '/src/assets/images/jutta_horn_art_3.jpg',
   },
 ];
 

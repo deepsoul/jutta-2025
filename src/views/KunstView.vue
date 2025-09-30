@@ -162,31 +162,31 @@ const techniques = [
     name: 'Malerei',
     description:
       'Der Schwerpunkt ihrer künstlerischen Aktivitäten liegt seit 1979 in der Malerei mit all ihren Facetten und Möglichkeiten.',
-    image: '/src/assets/images/malerei.jpg',
+    image: '/src/assets/images/jutta_horn_art_4.jpg',
   },
   {
     name: 'Radierungen',
     description:
       'Durch Radierungen erkundet Jutta Horn die feinen Linien und Strukturen, die tiefe emotionale Ausdruckskraft entfalten.',
-    image: '/src/assets/images/radierungen.jpg',
+    image: '/src/assets/images/jutta_horn_art_6.jpg',
   },
   {
     name: 'Collagen',
     description:
       'Collagen ermöglichen es, verschiedene Materialien und Techniken zu kombinieren und neue künstlerische Wege zu beschreiten.',
-    image: '/src/assets/images/collagen.jpg',
+    image: '/src/assets/images/jutta_horn_art_7.jpg',
   },
   {
     name: 'Druckverfahren',
     description:
       'Experimentelle Druckverfahren eröffnen neue Möglichkeiten des künstlerischen Ausdrucks und der Materialerkundung.',
-    image: '/src/assets/images/druckverfahren.jpg',
+    image: '/src/assets/images/jutta_horn_art_9.jpg',
   },
   {
     name: 'Holzschnitte',
     description:
       'Holzschnitte verbinden traditionelle Handwerkskunst mit modernem künstlerischem Ausdruck.',
-    image: '/src/assets/images/holzschnitte.jpg',
+    image: '/src/assets/images/jutta_horn_art_11.jpg',
   },
 ];
 
