@@ -303,50 +303,52 @@ const submitForm = async () => {
   formLoading.value = true;
 
   try {
-    // Create mailto link with form data
-    const subject = encodeURIComponent(
-      `Kontaktformular: ${form.value.subject}`,
-    );
-    const body = encodeURIComponent(`
-Name: ${form.value.name}
-E-Mail: ${form.value.email}
-Betreff: ${form.value.subject}
+    // Send to PHP script on www.juttahorn.de
+    const response = await fetch('https://www.juttahorn.de/contact-form-simple.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: form.value.name,
+        email: form.value.email,
+        subject: form.value.subject,
+        message: form.value.message,
+      }),
+    });
 
-Nachricht:
-${form.value.message}
+    const result = await response.json();
 
----
-Diese Nachricht wurde über das Kontaktformular auf juttahorn.de gesendet.
-    `);
+    if (response.ok && result.success) {
+      // Reset form and clear errors
+      form.value = {
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+        privacy: false,
+      };
 
-    // Open default email client
-    const mailtoLink = `mailto:info@juttahorn.de?subject=${subject}&body=${body}`;
-    window.open(mailtoLink, '_blank');
+      // Clear all error messages
+      nameErrors.value = [];
+      emailErrors.value = [];
+      subjectErrors.value = [];
+      messageErrors.value = [];
+      privacyErrors.value = [];
 
-    // Reset form and clear errors
-    form.value = {
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
-      privacy: false,
-    };
-
-    // Clear all error messages
-    nameErrors.value = [];
-    emailErrors.value = [];
-    subjectErrors.value = [];
-    messageErrors.value = [];
-    privacyErrors.value = [];
-
-    // Show success message
-    alert(
-      'Ihr E-Mail-Client wird geöffnet. Bitte senden Sie die E-Mail ab, um Ihre Nachricht zu übermitteln.',
-    );
+      // Show success message
+      alert(
+        'Vielen Dank für Ihre Nachricht! Sie erhalten eine Bestätigungs-E-Mail. Ich werde mich bald bei Ihnen melden.',
+      );
+    } else {
+      // Show error message
+      const errorMessage = result.details ? result.details.join(', ') : result.error || 'Unbekannter Fehler';
+      alert(`Fehler beim Senden: ${errorMessage}`);
+    }
   } catch (error) {
     console.error('Error submitting form:', error);
     alert(
-      'Fehler beim Öffnen des E-Mail-Clients. Bitte kontaktieren Sie uns direkt unter info@juttahorn.de',
+      'Fehler beim Senden der Nachricht. Bitte versuchen Sie es später erneut oder kontaktieren Sie uns direkt unter info@juttahorn.de',
     );
   } finally {
     formLoading.value = false;
