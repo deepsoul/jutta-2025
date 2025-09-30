@@ -64,7 +64,6 @@ export default async function handler(req, res) {
         to: process.env.CONTACT_EMAIL || 'info@juttahorn.de',
       },
     });
-
   } catch (error) {
     console.error('Error in send-email-simple:', error);
     return res.status(500).json({
