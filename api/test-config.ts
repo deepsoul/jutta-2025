@@ -15,7 +15,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       SMTP_USER: process.env.SMTP_USER ? '✅ Set' : '❌ Missing',
       SMTP_PASS: process.env.SMTP_PASS ? '✅ Set' : '❌ Missing',
       SMTP_FROM: process.env.SMTP_FROM || '❌ Missing (will use SMTP_USER)',
-      CONTACT_EMAIL: process.env.CONTACT_EMAIL || '❌ Missing (default: info@juttahorn.de)',
+      CONTACT_EMAIL:
+        process.env.CONTACT_EMAIL || '❌ Missing (default: info@juttahorn.de)',
     };
 
     return res.status(200).json({
