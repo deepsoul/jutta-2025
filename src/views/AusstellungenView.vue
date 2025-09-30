@@ -192,46 +192,55 @@
 const currentExhibitions = [
   {
     id: 1,
-    title: 'KUNSTAUSSTELLUNG "Retrospektive"',
-    location: 'Rutesheimer Rathaus',
-    dates: '07.04.2024 - 04.05.2024',
+    title: 'Gemeinsam - Unterschiedlich, mit allem, was wir finden',
+    location: 'Rathaus Weissach',
+    dates: '09.10.2025 - 07.11.2025',
     description:
-      'Jutta Horn & Gerda Steimle - Vernissage am 07.04.2024 um 11:15 Uhr',
-    website: 'https://www.kulturforum-rutesheim.de',
-    image: '/assets/retrospektive-2024.jpg',
+      'Eine neue Ausstellung mit Vernissage am 09.10.2025 um 19:00 Uhr. Die Ausstellung zeigt die Vielfalt künstlerischen Schaffens.',
+    website: 'https://www.weissach.de',
+    image: '/assets/ausstellung-1.jpg',
   },
 ];
 
 const pastExhibitions = [
   {
     id: 1,
+    title: 'KUNSTAUSSTELLUNG "Retrospektive"',
+    location: 'Rutesheimer Rathaus',
+    dates: '07.04.2024 - 04.05.2024',
+    description:
+      'Jutta Horn & Gerda Steimle - Vernissage am 07.04.2024 um 11:15 Uhr. Eine umfassende Retrospektive des künstlerischen Schaffens.',
+    image: '/assets/retrospektive-2024.jpg',
+  },
+  {
+    id: 2,
     title: 'Momentaufnahmen',
     location: 'Galerie am Markt, Berlin',
     dates: 'März - Mai 2023',
     description:
       'Eine Einzelausstellung mit Werken aus den letzten zwei Jahren, die sich mit dem Thema Zeit und Erinnerung beschäftigen.',
-    image: '/assets/ausstellung-1.jpg',
+    image: '/assets/ausstellung-2.jpg',
   },
   {
-    id: 2,
+    id: 3,
     title: 'Natur und Seele',
     location: 'Kunstverein München',
     dates: 'Oktober - Dezember 2022',
     description:
       'Gemeinsame Ausstellung mit drei weiteren Künstlerinnen zum Thema der Verbindung zwischen Mensch und Natur.',
-    image: '/assets/ausstellung-2.jpg',
+    image: '/assets/ausstellung-3.jpg',
   },
   {
-    id: 3,
+    id: 4,
     title: 'Zeitlose Schönheit',
     location: 'Atelier Jutta Horn, Hamburg',
     dates: 'Juni - August 2022',
     description:
       'Eine intime Präsentation neuer Arbeiten in meinem eigenen Atelier für Freunde und Sammler.',
-    image: '/assets/ausstellung-3.jpg',
+    image: '/assets/ausstellung-4.jpg',
   },
   {
-    id: 4,
+    id: 5,
     title: 'Aquarelle und Ölbilder',
     location: 'Kunsthalle Bremen',
     dates: 'Februar - April 2022',

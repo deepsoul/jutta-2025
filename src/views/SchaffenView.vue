@@ -293,8 +293,10 @@ const works = [
     year: '2021',
     size: '30x40 cm',
     category: 'Zeichnung',
-    description: 'Eine feine Bleistiftzeichnung mit präzisen Linien und Schattierungen.',
-    story: 'Die Zeichnung zeigt Jutta Horns Können in der klassischen Zeichentechnik.',
+    description:
+      'Eine feine Bleistiftzeichnung mit präzisen Linien und Schattierungen.',
+    story:
+      'Die Zeichnung zeigt Jutta Horns Können in der klassischen Zeichentechnik.',
     image: '/assets/jutta_horn_art_16.jpg',
   },
   {
@@ -327,7 +329,8 @@ const works = [
     size: '40x50 cm',
     category: 'Zeichnung',
     description: 'Eine warme Rötelzeichnung mit sanften Übergängen.',
-    story: 'Der Rötel verleiht der Zeichnung eine warme, lebendige Ausstrahlung.',
+    story:
+      'Der Rötel verleiht der Zeichnung eine warme, lebendige Ausstrahlung.',
     image: '/assets/jutta_horn_art_19.jpg',
   },
   {
@@ -337,8 +340,10 @@ const works = [
     year: '2023',
     size: '35x45 cm',
     category: 'Zeichnung',
-    description: 'Eine Mischtechnik aus Bleistift und Kohle für besondere Effekte.',
-    story: 'Die Kombination verschiedener Zeichenmaterialien schafft interessante Texturen.',
+    description:
+      'Eine Mischtechnik aus Bleistift und Kohle für besondere Effekte.',
+    story:
+      'Die Kombination verschiedener Zeichenmaterialien schafft interessante Texturen.',
     image: '/assets/jutta_horn_art_20.jpg',
   },
   {
@@ -349,7 +354,8 @@ const works = [
     size: '30x40 cm',
     category: 'Zeichnung',
     description: 'Eine lebendige Kreidezeichnung mit kräftigen Farben.',
-    story: 'Die Kreide ermöglicht lebendige Farben und spontane Ausdruckskraft.',
+    story:
+      'Die Kreide ermöglicht lebendige Farben und spontane Ausdruckskraft.',
     image: '/assets/jutta_horn_art_21.jpg',
   },
 ];
