@@ -46,8 +46,10 @@ export default async function handler(req, res) {
       if (missingVars.length > 0) {
         return res.status(500).json({
           error: 'E-Mail-Konfiguration unvollständig',
-          message: 'Folgende Umgebungsvariablen fehlen: ' + missingVars.join(', '),
-          instructions: 'Bitte setzen Sie die All-Inkl E-Mail-Konfiguration in Vercel',
+          message:
+            'Folgende Umgebungsvariablen fehlen: ' + missingVars.join(', '),
+          instructions:
+            'Bitte setzen Sie die All-Inkl E-Mail-Konfiguration in Vercel',
           required_vars: [
             'SMTP_HOST=mail.juttahorn.de',
             'SMTP_PORT=587',
@@ -82,7 +84,6 @@ export default async function handler(req, res) {
 
     // Method not allowed
     return res.status(405).json({error: 'Method not allowed'});
-
   } catch (error) {
     console.error('API error:', error);
     return res.status(500).json({
