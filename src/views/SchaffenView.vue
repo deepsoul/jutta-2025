@@ -29,8 +29,8 @@
                   selectedCategory === category ? 'jutta-900' : 'jutta-600'
                 "
                 :class="
-                  selectedCategory === category 
-                    ? 'text-white' 
+                  selectedCategory === category
+                    ? 'text-white'
                     : 'text-jutta-600'
                 "
                 @click="selectedCategory = category"
@@ -285,6 +285,72 @@ const works = [
     description: 'Ein kraftvolles Statement der Künstlerin.',
     story: 'Jedes Werk ist ein Dialog zwischen Künstlerin und Betrachter.',
     image: '/assets/jutta_horn_art_15.jpg',
+  },
+  {
+    id: 13,
+    title: 'Zeichnung 1',
+    technique: 'Bleistift auf Papier',
+    year: '2021',
+    size: '30x40 cm',
+    category: 'Zeichnung',
+    description: 'Eine feine Bleistiftzeichnung mit präzisen Linien und Schattierungen.',
+    story: 'Die Zeichnung zeigt Jutta Horns Können in der klassischen Zeichentechnik.',
+    image: '/assets/jutta_horn_art_16.jpg',
+  },
+  {
+    id: 14,
+    title: 'Zeichnung 2',
+    technique: 'Kohle auf Papier',
+    year: '2021',
+    size: '50x70 cm',
+    category: 'Zeichnung',
+    description: 'Eine ausdrucksstarke Kohlezeichnung mit starken Kontrasten.',
+    story: 'Die Kohle ermöglicht tiefe Schatten und dramatische Effekte.',
+    image: '/assets/jutta_horn_art_17.jpg',
+  },
+  {
+    id: 15,
+    title: 'Zeichnung 3',
+    technique: 'Tinte auf Papier',
+    year: '2022',
+    size: '25x35 cm',
+    category: 'Zeichnung',
+    description: 'Eine präzise Tintenzeichnung mit filigranen Details.',
+    story: 'Die Tinte erlaubt feine Linien und präzise Ausarbeitungen.',
+    image: '/assets/jutta_horn_art_18.jpg',
+  },
+  {
+    id: 16,
+    title: 'Zeichnung 4',
+    technique: 'Rötel auf Papier',
+    year: '2022',
+    size: '40x50 cm',
+    category: 'Zeichnung',
+    description: 'Eine warme Rötelzeichnung mit sanften Übergängen.',
+    story: 'Der Rötel verleiht der Zeichnung eine warme, lebendige Ausstrahlung.',
+    image: '/assets/jutta_horn_art_19.jpg',
+  },
+  {
+    id: 17,
+    title: 'Zeichnung 5',
+    technique: 'Bleistift und Kohle',
+    year: '2023',
+    size: '35x45 cm',
+    category: 'Zeichnung',
+    description: 'Eine Mischtechnik aus Bleistift und Kohle für besondere Effekte.',
+    story: 'Die Kombination verschiedener Zeichenmaterialien schafft interessante Texturen.',
+    image: '/assets/jutta_horn_art_20.jpg',
+  },
+  {
+    id: 18,
+    title: 'Zeichnung 6',
+    technique: 'Kreide auf Papier',
+    year: '2023',
+    size: '30x40 cm',
+    category: 'Zeichnung',
+    description: 'Eine lebendige Kreidezeichnung mit kräftigen Farben.',
+    story: 'Die Kreide ermöglicht lebendige Farben und spontane Ausdruckskraft.',
+    image: '/assets/jutta_horn_art_21.jpg',
   },
 ];
 
