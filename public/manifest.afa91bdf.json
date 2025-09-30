@@ -1,0 +1,9 @@
+{
+  "name": "juttahorn-21",
+  "short_name": "juttahorn-21",
+  "icons": [],
+  "start_url": "/?standalone=true",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "lang": "de"
+}

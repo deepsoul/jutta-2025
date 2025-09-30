@@ -6,13 +6,16 @@
   >
     <v-container class="jutta-container">
       <v-row align="center" no-gutters>
-        <v-col cols="6" md="3">
-          <router-link to="/" class="text-decoration-none">
-            <h1 class="text-2xl font-serif font-medium text-jutta-900">
-              Jutta Horn
-            </h1>
-          </router-link>
-        </v-col>
+                <v-col cols="6" md="3">
+                  <router-link to="/" class="text-decoration-none">
+                    <h1 class="text-xl md:text-2xl font-display font-semibold text-jutta-900">
+                      Jutta Horn
+                    </h1>
+                    <p class="text-sm md:text-base font-body text-jutta-600 -mt-1">
+                      Künstlerin
+                    </p>
+                  </router-link>
+                </v-col>
 
         <v-col cols="6" md="9" class="flex justify-end">
           <!-- Mobile Menu Button -->
@@ -32,9 +35,12 @@
           >
             <!-- Backdrop -->
             <div class="absolute inset-0 bg-black bg-opacity-75"></div>
-            
+
             <!-- Menu Panel -->
-            <div class="absolute right-0 top-0 h-full w-80 bg-white shadow-2xl border-l border-jutta-200" @click.stop>
+            <div
+              class="absolute right-0 top-0 h-full w-80 bg-white shadow-2xl border-l border-jutta-200"
+              @click.stop
+            >
               <div
                 class="flex items-center justify-between p-4 border-b border-jutta-200 bg-white"
               >
