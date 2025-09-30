@@ -102,20 +102,15 @@
           <v-col cols="12" lg="8" class="mx-auto">
             <h2 class="jutta-subheading mb-8 text-center">Schreiben Sie mir</h2>
 
-            <v-form
-              @submit.prevent="submitForm"
-              ref="form"
-              validate-on="submit"
-            >
+            <v-form @submit.prevent="submitForm" ref="form">
               <v-row>
                 <v-col cols="12" md="6">
                   <v-text-field
                     v-model="form.name"
                     label="Name"
-                    :rules="nameRules"
                     variant="outlined"
-                    required
-                    validate-on="blur"
+                    :error-messages="nameErrors"
+                    @blur="validateName"
                   />
                 </v-col>
                 <v-col cols="12" md="6">
@@ -123,39 +118,35 @@
                     v-model="form.email"
                     label="E-Mail"
                     type="email"
-                    :rules="emailRules"
                     variant="outlined"
-                    required
-                    validate-on="blur"
+                    :error-messages="emailErrors"
+                    @blur="validateEmail"
                   />
                 </v-col>
                 <v-col cols="12">
                   <v-text-field
                     v-model="form.subject"
                     label="Betreff"
-                    :rules="subjectRules"
                     variant="outlined"
-                    required
-                    validate-on="blur"
+                    :error-messages="subjectErrors"
+                    @blur="validateSubject"
                   />
                 </v-col>
                 <v-col cols="12">
                   <v-textarea
                     v-model="form.message"
                     label="Nachricht"
-                    :rules="messageRules"
                     variant="outlined"
                     rows="6"
-                    required
-                    validate-on="blur"
+                    :error-messages="messageErrors"
+                    @blur="validateMessage"
                   />
                 </v-col>
                 <v-col cols="12">
                   <v-checkbox
                     v-model="form.privacy"
-                    :rules="privacyRules"
-                    required
-                    validate-on="blur"
+                    :error-messages="privacyErrors"
+                    @change="validatePrivacy"
                   >
                     <template v-slot:label>
                       <span class="text-sm text-jutta-700">
@@ -235,31 +226,80 @@ const form = ref({
 
 const formLoading = ref(false);
 
-const nameRules = [
-  (v: string) => !!v || 'Name ist erforderlich',
-  (v: string) => v.length >= 2 || 'Name muss mindestens 2 Zeichen haben',
-];
+// Error states for manual validation
+const nameErrors = ref<string[]>([]);
+const emailErrors = ref<string[]>([]);
+const subjectErrors = ref<string[]>([]);
+const messageErrors = ref<string[]>([]);
+const privacyErrors = ref<string[]>([]);
 
-const emailRules = [
-  (v: string) => !!v || 'E-Mail ist erforderlich',
-  (v: string) => /.+@.+\..+/.test(v) || 'E-Mail muss gültig sein',
-];
+// Manual validation functions
+const validateName = () => {
+  nameErrors.value = [];
+  if (!form.value.name) {
+    nameErrors.value.push('Name ist erforderlich');
+  } else if (form.value.name.length < 2) {
+    nameErrors.value.push('Name muss mindestens 2 Zeichen haben');
+  }
+};
 
-const subjectRules = [
-  (v: string) => !!v || 'Betreff ist erforderlich',
-  (v: string) => v.length >= 5 || 'Betreff muss mindestens 5 Zeichen haben',
-];
+const validateEmail = () => {
+  emailErrors.value = [];
+  if (!form.value.email) {
+    emailErrors.value.push('E-Mail ist erforderlich');
+  } else if (!/.+@.+\..+/.test(form.value.email)) {
+    emailErrors.value.push('E-Mail muss gültig sein');
+  }
+};
 
-const messageRules = [
-  (v: string) => !!v || 'Nachricht ist erforderlich',
-  (v: string) => v.length >= 10 || 'Nachricht muss mindestens 10 Zeichen haben',
-];
+const validateSubject = () => {
+  subjectErrors.value = [];
+  if (!form.value.subject) {
+    subjectErrors.value.push('Betreff ist erforderlich');
+  } else if (form.value.subject.length < 5) {
+    subjectErrors.value.push('Betreff muss mindestens 5 Zeichen haben');
+  }
+};
 
-const privacyRules = [
-  (v: boolean) => !!v || 'Sie müssen der Datenschutzerklärung zustimmen',
-];
+const validateMessage = () => {
+  messageErrors.value = [];
+  if (!form.value.message) {
+    messageErrors.value.push('Nachricht ist erforderlich');
+  } else if (form.value.message.length < 10) {
+    messageErrors.value.push('Nachricht muss mindestens 10 Zeichen haben');
+  }
+};
+
+const validatePrivacy = () => {
+  privacyErrors.value = [];
+  if (!form.value.privacy) {
+    privacyErrors.value.push('Sie müssen der Datenschutzerklärung zustimmen');
+  }
+};
+
+// Validate all fields
+const validateAll = () => {
+  validateName();
+  validateEmail();
+  validateSubject();
+  validateMessage();
+  validatePrivacy();
+  
+  return (
+    nameErrors.value.length === 0 &&
+    emailErrors.value.length === 0 &&
+    subjectErrors.value.length === 0 &&
+    messageErrors.value.length === 0 &&
+    privacyErrors.value.length === 0
+  );
+};
 
 const submitForm = async () => {
+  // Validate all fields before submitting
+  if (!validateAll()) {
+    return;
+  }
+
   formLoading.value = true;
 
   try {
@@ -279,7 +319,7 @@ const submitForm = async () => {
     const result = await response.json();
 
     if (response.ok) {
-      // Reset form
+      // Reset form and clear errors
       form.value = {
         name: '',
         email: '',
@@ -287,6 +327,13 @@ const submitForm = async () => {
         message: '',
         privacy: false,
       };
+      
+      // Clear all error messages
+      nameErrors.value = [];
+      emailErrors.value = [];
+      subjectErrors.value = [];
+      messageErrors.value = [];
+      privacyErrors.value = [];
 
       // Show success message
       alert(
