@@ -102,7 +102,11 @@
           <v-col cols="12" lg="8" class="mx-auto">
             <h2 class="jutta-subheading mb-8 text-center">Schreiben Sie mir</h2>
 
-            <v-form @submit.prevent="submitForm" ref="form" validate-on="submit">
+            <v-form
+              @submit.prevent="submitForm"
+              ref="form"
+              validate-on="submit"
+            >
               <v-row>
                 <v-col cols="12" md="6">
                   <v-text-field
