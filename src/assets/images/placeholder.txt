@@ -1,0 +1,13 @@
+# Platzhalter für Bilder
+
+Diese Datei dient als Platzhalter für die Bilder, die in der Website verwendet werden.
+
+Benötigte Bilder:
+- jutta-portrait.jpg (Porträt von Jutta Horn)
+- atelier.jpg (Atelier-Ansicht)
+- atelier-kontakt.jpg (Atelier für Kontaktseite)
+- werk-1.jpg bis werk-6.jpg (Kunstwerke)
+- ausstellung-1.jpg bis ausstellung-4.jpg (Ausstellungsfotos)
+- oelmalerei.jpg, aquarell.jpg, mischtechnik.jpg (Technik-Beispiele)
+
+Die Bilder sollten hochauflösend und professionell sein, um die Qualität der Website zu gewährleisten.

@@ -1,0 +1,201 @@
+<template>
+  <div>
+    <!-- Hero Section -->
+    <section class="bg-white jutta-section">
+      <v-container class="jutta-container">
+        <v-row align="center" class="min-h-screen">
+          <v-col cols="12" lg="6">
+            <div class="pr-0 lg:pr-12">
+              <h1 class="jutta-heading mb-6">
+                Jutta Horn
+              </h1>
+              <p class="text-xl lg:text-2xl text-jutta-600 mb-8 leading-relaxed">
+                Künstlerin mit 75 Jahren Erfahrung im Leben und der Kunst. 
+                Meine Werke erzählen Geschichten von Zeit, Erinnerung und der 
+                Schönheit des Moments.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4">
+                <v-btn
+                  to="/kunst"
+                  color="jutta-900"
+                  size="large"
+                  class="text-white"
+                >
+                  Meine Kunst entdecken
+                </v-btn>
+                <v-btn
+                  to="/kontakt"
+                  variant="outlined"
+                  color="jutta-900"
+                  size="large"
+                >
+                  Kontakt aufnehmen
+                </v-btn>
+              </div>
+            </div>
+          </v-col>
+          
+          <v-col cols="12" lg="6">
+            <div class="relative">
+              <div class="aspect-square bg-jutta-100 rounded-lg overflow-hidden">
+                <img
+                  src="/src/assets/images/jutta-portrait.jpg"
+                  alt="Jutta Horn"
+                  class="w-full h-full object-cover"
+                  @error="handleImageError"
+                />
+                <div v-if="!imageLoaded" class="absolute inset-0 flex items-center justify-center">
+                  <v-progress-circular indeterminate color="jutta-600" />
+                </div>
+              </div>
+            </div>
+          </v-col>
+        </v-row>
+      </v-container>
+    </section>
+
+    <!-- About Section -->
+    <section class="bg-jutta-50 jutta-section">
+      <v-container class="jutta-container">
+        <v-row>
+          <v-col cols="12" lg="8" class="mx-auto text-center">
+            <h2 class="jutta-subheading mb-8">
+              Über meine Kunst
+            </h2>
+            <p class="text-lg text-jutta-700 leading-relaxed mb-8">
+              Mit 75 Jahren blicke ich auf ein reiches Leben voller Erfahrungen zurück. 
+              Meine Kunst ist ein Spiegel dieser Reise – sie erzählt von Momenten der 
+              Stille, der Reflexion und der tiefen Verbindung zur Natur und zum Menschsein.
+            </p>
+            <p class="text-lg text-jutta-700 leading-relaxed">
+              Jedes Werk entsteht aus einer inneren Notwendigkeit heraus, 
+              dem Ausdruck zu verleihen, was Worte nicht fassen können.
+            </p>
+          </v-col>
+        </v-row>
+      </v-container>
+    </section>
+
+    <!-- Featured Works Section -->
+    <section class="bg-white jutta-section">
+      <v-container class="jutta-container">
+        <v-row>
+          <v-col cols="12" class="text-center mb-16">
+            <h2 class="jutta-subheading mb-4">
+              Ausgewählte Werke
+            </h2>
+            <p class="text-lg text-jutta-600">
+              Ein Einblick in meine künstlerische Arbeit
+            </p>
+          </v-col>
+        </v-row>
+        
+        <v-row>
+          <v-col
+            v-for="(work, index) in featuredWorks"
+            :key="index"
+            cols="12"
+            md="6"
+            lg="4"
+            class="mb-8"
+          >
+            <v-card
+              :elevation="0"
+              class="h-full bg-transparent"
+            >
+              <div class="aspect-square bg-jutta-100 rounded-lg overflow-hidden mb-4">
+                <img
+                  :src="work.image"
+                  :alt="work.title"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  @error="handleImageError"
+                />
+              </div>
+              <v-card-text class="pa-0">
+                <h3 class="text-xl font-serif font-medium text-jutta-900 mb-2">
+                  {{ work.title }}
+                </h3>
+                <p class="text-jutta-600 mb-2">
+                  {{ work.technique }}
+                </p>
+                <p class="text-sm text-jutta-500">
+                  {{ work.year }}
+                </p>
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+        
+        <v-row>
+          <v-col cols="12" class="text-center">
+            <v-btn
+              to="/schaffen"
+              variant="outlined"
+              color="jutta-900"
+              size="large"
+            >
+              Alle Werke ansehen
+            </v-btn>
+          </v-col>
+        </v-row>
+      </v-container>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="bg-jutta-900 text-white jutta-section">
+      <v-container class="jutta-container">
+        <v-row>
+          <v-col cols="12" lg="8" class="mx-auto text-center">
+            <h2 class="text-4xl lg:text-5xl font-serif font-medium mb-6">
+              Lassen Sie uns ins Gespräch kommen
+            </h2>
+            <p class="text-xl text-jutta-200 mb-8 leading-relaxed">
+              Interessieren Sie sich für eines meiner Werke oder möchten Sie 
+              mehr über meine künstlerische Arbeit erfahren? Ich freue mich 
+              auf Ihre Nachricht.
+            </p>
+            <v-btn
+              to="/kontakt"
+              color="white"
+              size="large"
+              class="text-jutta-900"
+            >
+              Kontakt aufnehmen
+            </v-btn>
+          </v-col>
+        </v-row>
+      </v-container>
+    </section>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const imageLoaded = ref(true)
+
+const featuredWorks = [
+  {
+    title: 'Zeit der Stille',
+    technique: 'Öl auf Leinwand',
+    year: '2024',
+    image: '/src/assets/images/werk-1.jpg'
+  },
+  {
+    title: 'Erinnerungen',
+    technique: 'Mischtechnik',
+    year: '2023',
+    image: '/src/assets/images/werk-2.jpg'
+  },
+  {
+    title: 'Naturgeist',
+    technique: 'Aquarell',
+    year: '2023',
+    image: '/src/assets/images/werk-3.jpg'
+  }
+]
+
+const handleImageError = () => {
+  imageLoaded.value = false
+}
+</script>

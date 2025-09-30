@@ -1,0 +1,33 @@
+{
+  "name": "jutta-2025",
+  "version": "1.0.0",
+  "description": "Jutta Horn - Künstlerin Website",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "type-check": "vue-tsc --noEmit"
+  },
+  "keywords": ["vue", "vuetify", "tailwindcss", "artist", "portfolio"],
+  "author": "Jutta Horn",
+  "license": "MIT",
+  "dependencies": {
+    "@mdi/font": "^7.4.47",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vue/tsconfig": "^0.8.1",
+    "pinia": "^3.0.3",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.7",
+    "vue": "^3.5.22",
+    "vue-router": "^4.5.1",
+    "vuetify": "^3.9.0-beta.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.19",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.13"
+  }
+}
