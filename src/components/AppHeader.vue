@@ -6,16 +6,18 @@
   >
     <v-container class="jutta-container">
       <v-row align="center" no-gutters>
-                <v-col cols="6" md="3">
-                  <router-link to="/" class="text-decoration-none">
-                    <h1 class="text-xl md:text-2xl font-display font-semibold text-jutta-900">
-                      Jutta Horn
-                    </h1>
-                    <p class="text-sm md:text-base font-body text-jutta-600 -mt-1">
-                      Künstlerin
-                    </p>
-                  </router-link>
-                </v-col>
+        <v-col cols="6" md="3">
+          <router-link to="/" class="text-decoration-none">
+            <h1
+              class="text-xl md:text-2xl font-display font-semibold text-jutta-900"
+            >
+              Jutta Horn
+            </h1>
+            <p class="text-sm md:text-base font-body text-jutta-600 -mt-1">
+              Künstlerin
+            </p>
+          </router-link>
+        </v-col>
 
         <v-col cols="6" md="9" class="flex justify-end">
           <!-- Mobile Menu Button -->

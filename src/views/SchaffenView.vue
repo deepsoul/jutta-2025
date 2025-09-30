@@ -28,6 +28,11 @@
                 :color="
                   selectedCategory === category ? 'jutta-900' : 'jutta-600'
                 "
+                :class="
+                  selectedCategory === category 
+                    ? 'text-white' 
+                    : 'text-jutta-600'
+                "
                 @click="selectedCategory = category"
                 class="text-sm"
               >
