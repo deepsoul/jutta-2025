@@ -196,7 +196,7 @@ const currentExhibitions = [
     location: 'Rathaus Weissach',
     dates: '09.10.2025 - 07.11.2025',
     description:
-      'Ausstellung mit Vernissage am 09.10.2025 um 19:00 Uhr. Bilder der Künsterlinnen Jutta Horn & Ruth Schleeh.',
+      'Ausstellung mit Vernissage am 09.10.2025 um 19:00 Uhr. Bilder der Künstlerinnen Jutta Horn & Ruth Schleeh.',
     website:
       'https://www.weissach.de/weissach-buerger/leben-wohnen/veranstaltungskalender/3137/vernissage',
     image: '/assets/ausstellung-1.jpg',
