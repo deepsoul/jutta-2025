@@ -23,6 +23,18 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(400).json({error: 'Invalid email format'});
     }
 
+    // Check if environment variables are set
+    if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
+      console.error('Missing environment variables:', {
+        SMTP_HOST: !!process.env.SMTP_HOST,
+        SMTP_USER: !!process.env.SMTP_USER,
+        SMTP_PASS: !!process.env.SMTP_PASS,
+      });
+      return res.status(500).json({
+        error: 'E-Mail-Konfiguration fehlt. Bitte kontaktieren Sie den Administrator.',
+      });
+    }
+
     // Create transporter using environment variables
     const transporter = nodemailer.createTransporter({
       host: process.env.SMTP_HOST,
@@ -33,6 +45,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         pass: process.env.SMTP_PASS,
       },
     });
+
+    // Test connection
+    try {
+      await transporter.verify();
+      console.log('SMTP connection verified successfully');
+    } catch (verifyError) {
+      console.error('SMTP connection failed:', verifyError);
+      return res.status(500).json({
+        error: 'E-Mail-Server-Verbindung fehlgeschlagen. Bitte versuchen Sie es später erneut.',
+      });
+    }
 
     // Email content
     const mailOptions = {
@@ -124,9 +147,23 @@ Antworten Sie direkt auf diese E-Mail, um dem Absender zu antworten.
     });
   } catch (error) {
     console.error('Error sending email:', error);
+    
+    // More specific error messages
+    let errorMessage = 'Fehler beim Senden der E-Mail. Bitte versuchen Sie es später erneut.';
+    
+    if (error instanceof Error) {
+      if (error.message.includes('ECONNREFUSED')) {
+        errorMessage = 'E-Mail-Server nicht erreichbar. Bitte versuchen Sie es später erneut.';
+      } else if (error.message.includes('authentication')) {
+        errorMessage = 'E-Mail-Authentifizierung fehlgeschlagen. Bitte kontaktieren Sie den Administrator.';
+      } else if (error.message.includes('timeout')) {
+        errorMessage = 'E-Mail-Server antwortet nicht. Bitte versuchen Sie es später erneut.';
+      }
+    }
+    
     return res.status(500).json({
-      error:
-        'Fehler beim Senden der E-Mail. Bitte versuchen Sie es später erneut.',
+      error: errorMessage,
+      details: process.env.NODE_ENV === 'development' ? error.message : undefined,
     });
   }
 }

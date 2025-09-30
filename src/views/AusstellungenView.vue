@@ -235,7 +235,7 @@ const pastExhibitions = [
     id: 4,
     title: 'Zeitlose Schönheit',
     location: 'Atelier Jutta Horn, Hamburg',
-    dates: 'Juni - August 2022',
+    dates: 'dauerhaft',
     description:
       'Eine intime Präsentation neuer Arbeiten in meinem eigenen Atelier für Freunde und Sammler.',
     image: '/assets/ausstellung-4.jpg',
