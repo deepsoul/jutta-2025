@@ -24,30 +24,44 @@
             size="large"
           />
 
-          <!-- Mobile Navigation Drawer -->
-          <v-navigation-drawer
-            v-model="drawer"
-            temporary
-            location="right"
-            class="md:hidden"
-            width="280"
+          <!-- Mobile Menu Overlay -->
+          <div
+            v-if="drawer"
+            class="fixed inset-0 z-50 md:hidden"
+            @click="drawer = false"
           >
-            <v-list class="py-4">
-              <v-list-item
-                v-for="item in menuItems"
-                :key="item.name"
-                :to="item.to"
-                @click="drawer = false"
-                class="text-jutta-700 hover:bg-jutta-50"
-                :class="{'bg-jutta-100 text-jutta-900': $route.name === item.name}"
-              >
-                <template v-slot:prepend>
-                  <v-icon :icon="item.icon" class="text-jutta-500"></v-icon>
-                </template>
-                <v-list-item-title class="font-medium">{{ item.name }}</v-list-item-title>
-              </v-list-item>
-            </v-list>
-          </v-navigation-drawer>
+            <!-- Backdrop -->
+            <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+            
+            <!-- Menu Panel -->
+            <div class="absolute right-0 top-0 h-full w-80 bg-white shadow-xl">
+              <div class="flex items-center justify-between p-4 border-b border-jutta-200">
+                <h2 class="text-lg font-display font-semibold text-jutta-900">Menü</h2>
+                <v-btn
+                  variant="text"
+                  @click="drawer = false"
+                  icon="mdi-close"
+                  size="small"
+                />
+              </div>
+              
+              <nav class="py-4">
+                <router-link
+                  v-for="item in menuItems"
+                  :key="item.name"
+                  :to="item.to"
+                  @click="drawer = false"
+                  class="flex items-center px-6 py-4 text-jutta-700 hover:bg-jutta-50 transition-colors"
+                  :class="{
+                    'bg-jutta-100 text-jutta-900 border-r-4 border-jutta-500': $route.name === item.name,
+                  }"
+                >
+                  <v-icon :icon="item.icon" class="text-jutta-500 mr-4"></v-icon>
+                  <span class="font-medium">{{ item.name }}</span>
+                </router-link>
+              </nav>
+            </div>
+          </div>
 
           <!-- Desktop Menu -->
           <div class="hidden md:flex items-center gap-4">
