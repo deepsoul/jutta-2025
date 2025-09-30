@@ -304,7 +304,9 @@ const submitForm = async () => {
 
   try {
     // Create mailto link with form data
-    const subject = encodeURIComponent(`Kontaktformular: ${form.value.subject}`);
+    const subject = encodeURIComponent(
+      `Kontaktformular: ${form.value.subject}`,
+    );
     const body = encodeURIComponent(`
 Name: ${form.value.name}
 E-Mail: ${form.value.email}
@@ -329,7 +331,7 @@ Diese Nachricht wurde über das Kontaktformular auf juttahorn.de gesendet.
       message: '',
       privacy: false,
     };
-    
+
     // Clear all error messages
     nameErrors.value = [];
     emailErrors.value = [];
@@ -341,7 +343,6 @@ Diese Nachricht wurde über das Kontaktformular auf juttahorn.de gesendet.
     alert(
       'Ihr E-Mail-Client wird geöffnet. Bitte senden Sie die E-Mail ab, um Ihre Nachricht zu übermitteln.',
     );
-
   } catch (error) {
     console.error('Error submitting form:', error);
     alert(
