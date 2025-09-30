@@ -189,10 +189,10 @@
                   Über meine Arbeit
                 </h3>
                 <p class="jutta-text">
-                  Ich arbeite hauptsächlich in meinem Atelier in Hamburg und
-                  freue mich über Besuche von Kunstinteressierten. Gerne zeige
-                  ich Ihnen meine aktuellen Arbeiten und erzähle von meinem
-                  künstlerischen Schaffensprozess.
+                  Ich arbeite hauptsächlich in meinem Atelier in Weissach-Flacht
+                  und freue mich über Besuche von Kunstinteressierten. Gerne
+                  zeige ich Ihnen meine aktuellen Arbeiten und erzähle von
+                  meinem künstlerischen Schaffensprozess.
                 </p>
               </div>
               <div>
