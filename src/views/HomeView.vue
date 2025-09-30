@@ -6,13 +6,13 @@
         <v-row align="center" class="min-h-screen">
           <v-col cols="12" lg="6">
             <div class="pr-0 lg:pr-12">
-              <h1 class="jutta-heading mb-6">
-                Jutta Horn
-              </h1>
-              <p class="text-xl lg:text-2xl text-jutta-600 mb-8 leading-relaxed">
-                Künstlerin mit 75 Jahren Erfahrung im Leben und der Kunst. 
-                Meine Werke erzählen Geschichten von Zeit, Erinnerung und der 
-                Schönheit des Moments.
+              <h1 class="jutta-heading mb-6">Jutta Horn</h1>
+              <p
+                class="text-xl lg:text-2xl text-jutta-600 mb-8 leading-relaxed"
+              >
+                Künstlerisches Schaffen begleitet Jutta Horn ihr ganzes Leben. 
+                Schon früh, bereits 1979, war ihr klar, dass der Schwerpunkt ihrer 
+                künstlerischen Aktivitäten der Malerei gehört.
               </p>
               <div class="flex flex-col sm:flex-row gap-4">
                 <v-btn
@@ -34,17 +34,22 @@
               </div>
             </div>
           </v-col>
-          
+
           <v-col cols="12" lg="6">
             <div class="relative">
-              <div class="aspect-square bg-jutta-100 rounded-lg overflow-hidden">
+              <div
+                class="aspect-square bg-jutta-100 rounded-lg overflow-hidden"
+              >
                 <img
                   src="/src/assets/images/jutta-portrait.jpg"
                   alt="Jutta Horn"
                   class="w-full h-full object-cover"
                   @error="handleImageError"
                 />
-                <div v-if="!imageLoaded" class="absolute inset-0 flex items-center justify-center">
+                <div
+                  v-if="!imageLoaded"
+                  class="absolute inset-0 flex items-center justify-center"
+                >
                   <v-progress-circular indeterminate color="jutta-600" />
                 </div>
               </div>
@@ -59,17 +64,19 @@
       <v-container class="jutta-container">
         <v-row>
           <v-col cols="12" lg="8" class="mx-auto text-center">
-            <h2 class="jutta-subheading mb-8">
-              Über meine Kunst
-            </h2>
+            <h2 class="jutta-subheading mb-8">Über meine Kunst</h2>
             <p class="text-lg text-jutta-700 leading-relaxed mb-8">
-              Mit 75 Jahren blicke ich auf ein reiches Leben voller Erfahrungen zurück. 
-              Meine Kunst ist ein Spiegel dieser Reise – sie erzählt von Momenten der 
-              Stille, der Reflexion und der tiefen Verbindung zur Natur und zum Menschsein.
+              Ambitioniert erkundete sie die Bandbreite aller künstlerischer 
+              Ausdrucksformen: ob Radierungen, Collagen, Druckverfahren oder auch 
+              Holzschnitte und schuf sich so ein breites Portfolio an Kenntnissen 
+              der Materialien und Maltechniken.
             </p>
             <p class="text-lg text-jutta-700 leading-relaxed">
-              Jedes Werk entsteht aus einer inneren Notwendigkeit heraus, 
-              dem Ausdruck zu verleihen, was Worte nicht fassen können.
+              Sie selbst beschreibt diesen fortwährenden Drang nach Neuem: 
+              "Sich künstlerisch weiter zu entwickeln kann nicht heißen, nur das 
+              Erreichte zu pflegen oder zu perfektionieren, sondern auch das 
+              bekannte Terrain zu verlassen und stets nach neuen Ausdrucksformen 
+              und Aussagemöglichkeiten zu suchen."
             </p>
           </v-col>
         </v-row>
@@ -81,15 +88,13 @@
       <v-container class="jutta-container">
         <v-row>
           <v-col cols="12" class="text-center mb-16">
-            <h2 class="jutta-subheading mb-4">
-              Ausgewählte Werke
-            </h2>
+            <h2 class="jutta-subheading mb-4">Ausgewählte Werke</h2>
             <p class="text-lg text-jutta-600">
               Ein Einblick in meine künstlerische Arbeit
             </p>
           </v-col>
         </v-row>
-        
+
         <v-row>
           <v-col
             v-for="(work, index) in featuredWorks"
@@ -99,11 +104,10 @@
             lg="4"
             class="mb-8"
           >
-            <v-card
-              :elevation="0"
-              class="h-full bg-transparent"
-            >
-              <div class="aspect-square bg-jutta-100 rounded-lg overflow-hidden mb-4">
+            <v-card :elevation="0" class="h-full bg-transparent">
+              <div
+                class="aspect-square bg-jutta-100 rounded-lg overflow-hidden mb-4"
+              >
                 <img
                   :src="work.image"
                   :alt="work.title"
@@ -125,7 +129,7 @@
             </v-card>
           </v-col>
         </v-row>
-        
+
         <v-row>
           <v-col cols="12" class="text-center">
             <v-btn
@@ -141,6 +145,20 @@
       </v-container>
     </section>
 
+    <!-- Quote Section -->
+    <section class="bg-jutta-50 jutta-section">
+      <v-container class="jutta-container">
+        <v-row>
+          <v-col cols="12" lg="8" class="mx-auto text-center">
+            <blockquote class="text-2xl lg:text-3xl font-serif italic text-jutta-700 mb-8">
+              "Zugleich aus dem Leben gegriffen und zugleich typisch – das ist die höchste Kunst."
+            </blockquote>
+            <p class="text-lg text-jutta-600">— Christian Morgenstern</p>
+          </v-col>
+        </v-row>
+      </v-container>
+    </section>
+
     <!-- Contact CTA Section -->
     <section class="bg-jutta-900 text-white jutta-section">
       <v-container class="jutta-container">
@@ -150,9 +168,9 @@
               Lassen Sie uns ins Gespräch kommen
             </h2>
             <p class="text-xl text-jutta-200 mb-8 leading-relaxed">
-              Interessieren Sie sich für eines meiner Werke oder möchten Sie 
-              mehr über meine künstlerische Arbeit erfahren? Ich freue mich 
-              auf Ihre Nachricht.
+              Interessieren Sie sich für eines meiner Werke oder möchten Sie
+              mehr über meine künstlerische Arbeit erfahren? Ich freue mich auf
+              Ihre Nachricht.
             </p>
             <v-btn
               to="/kontakt"
@@ -170,32 +188,32 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import {ref} from 'vue';
 
-const imageLoaded = ref(true)
+const imageLoaded = ref(true);
 
 const featuredWorks = [
   {
     title: 'Zeit der Stille',
     technique: 'Öl auf Leinwand',
     year: '2024',
-    image: '/src/assets/images/werk-1.jpg'
+    image: '/src/assets/images/werk-1.jpg',
   },
   {
     title: 'Erinnerungen',
     technique: 'Mischtechnik',
     year: '2023',
-    image: '/src/assets/images/werk-2.jpg'
+    image: '/src/assets/images/werk-2.jpg',
   },
   {
     title: 'Naturgeist',
     technique: 'Aquarell',
     year: '2023',
-    image: '/src/assets/images/werk-3.jpg'
-  }
-]
+    image: '/src/assets/images/werk-3.jpg',
+  },
+];
 
 const handleImageError = () => {
-  imageLoaded.value = false
-}
+  imageLoaded.value = false;
+};
 </script>

@@ -22,15 +22,13 @@
               variant="text"
               color="jutta-600"
               size="small"
-              href="tel:+49123456789"
+              href="tel:+4915233644324"
             />
           </div>
         </v-col>
-        
+
         <v-col cols="12" md="6" class="text-md-right">
-          <h4 class="text-lg font-medium text-jutta-900 mb-4">
-            Navigation
-          </h4>
+          <h4 class="text-lg font-medium text-jutta-900 mb-4">Navigation</h4>
           <div class="flex flex-col gap-2">
             <router-link
               v-for="item in menuItems"
@@ -43,9 +41,9 @@
           </div>
         </v-col>
       </v-row>
-      
+
       <v-divider class="my-6" />
-      
+
       <v-row align="center">
         <v-col cols="12" class="text-center text-jutta-500">
           <p>&copy; {{ currentYear }} Jutta Horn. Alle Rechte vorbehalten.</p>
@@ -56,15 +54,15 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import {computed} from 'vue';
 
-const currentYear = computed(() => new Date().getFullYear())
+const currentYear = computed(() => new Date().getFullYear());
 
 const menuItems = [
-  { name: 'Home', to: '/' },
-  { name: 'Meine Kunst', to: '/kunst' },
-  { name: 'Mein Schaffen', to: '/schaffen' },
-  { name: 'Ausstellungen', to: '/ausstellungen' },
-  { name: 'Kontakt', to: '/kontakt' }
-]
+  {name: 'Home', to: '/'},
+  {name: 'Meine Kunst', to: '/kunst'},
+  {name: 'Mein Schaffen', to: '/schaffen'},
+  {name: 'Ausstellungen', to: '/ausstellungen'},
+  {name: 'Kontakt', to: '/kontakt'},
+];
 </script>

@@ -13,7 +13,7 @@
             </h1>
           </router-link>
         </v-col>
-        
+
         <v-col cols="6" md="9" class="d-flex justify-end">
           <v-btn
             variant="text"
@@ -21,7 +21,7 @@
             @click="drawer = !drawer"
             icon="mdi-menu"
           />
-          
+
           <v-navigation-drawer
             v-model="drawer"
             temporary
@@ -40,7 +40,7 @@
               </v-list-item>
             </v-list>
           </v-navigation-drawer>
-          
+
           <div class="d-none d-md-flex align-center gap-4">
             <v-btn
               v-for="item in menuItems"
@@ -48,7 +48,7 @@
               :to="item.to"
               variant="text"
               class="text-jutta-700 font-medium"
-              :class="{ 'text-jutta-900': $route.name === item.name }"
+              :class="{'text-jutta-900': $route.name === item.name}"
             >
               {{ item.name }}
             </v-btn>
@@ -60,15 +60,15 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import {ref} from 'vue';
 
-const drawer = ref(false)
+const drawer = ref(false);
 
 const menuItems = [
-  { name: 'Home', to: '/' },
-  { name: 'Meine Kunst', to: '/kunst' },
-  { name: 'Mein Schaffen', to: '/schaffen' },
-  { name: 'Ausstellungen', to: '/ausstellungen' },
-  { name: 'Kontakt', to: '/kontakt' }
-]
+  {name: 'Home', to: '/'},
+  {name: 'Meine Kunst', to: '/kunst'},
+  {name: 'Mein Schaffen', to: '/schaffen'},
+  {name: 'Ausstellungen', to: '/ausstellungen'},
+  {name: 'Kontakt', to: '/kontakt'},
+];
 </script>

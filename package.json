@@ -10,7 +10,13 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "type-check": "vue-tsc --noEmit"
   },
-  "keywords": ["vue", "vuetify", "tailwindcss", "artist", "portfolio"],
+  "keywords": [
+    "vue",
+    "vuetify",
+    "tailwindcss",
+    "artist",
+    "portfolio"
+  ],
   "author": "Jutta Horn",
   "license": "MIT",
   "dependencies": {
@@ -25,6 +31,7 @@
     "vuetify": "^3.9.0-beta.1"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.13",
     "@tailwindcss/typography": "^0.5.19",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",

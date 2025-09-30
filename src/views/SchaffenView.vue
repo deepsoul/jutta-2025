@@ -5,11 +5,9 @@
       <v-container class="jutta-container">
         <v-row>
           <v-col cols="12" lg="8" class="mx-auto text-center">
-            <h1 class="jutta-heading mb-8">
-              Mein Schaffen
-            </h1>
+            <h1 class="jutta-heading mb-8">Mein Schaffen</h1>
             <p class="text-xl text-jutta-700 leading-relaxed">
-              Eine Auswahl meiner Werke aus verschiedenen Schaffensperioden – 
+              Eine Auswahl meiner Werke aus verschiedenen Schaffensperioden –
               jeder Moment ein Ausdruck meiner künstlerischen Reise.
             </p>
           </v-col>
@@ -27,7 +25,9 @@
                 v-for="category in categories"
                 :key="category"
                 :variant="selectedCategory === category ? 'flat' : 'outlined'"
-                :color="selectedCategory === category ? 'jutta-900' : 'jutta-600'"
+                :color="
+                  selectedCategory === category ? 'jutta-900' : 'jutta-600'
+                "
                 @click="selectedCategory = category"
                 class="text-sm"
               >
@@ -56,7 +56,9 @@
               class="h-full bg-transparent cursor-pointer"
               @click="openWork(work)"
             >
-              <div class="aspect-square bg-jutta-100 rounded-lg overflow-hidden mb-4">
+              <div
+                class="aspect-square bg-jutta-100 rounded-lg overflow-hidden mb-4"
+              >
                 <img
                   :src="work.image"
                   :alt="work.title"
@@ -85,11 +87,7 @@
     </section>
 
     <!-- Work Detail Dialog -->
-    <v-dialog
-      v-model="workDialog"
-      max-width="800"
-      scrollable
-    >
+    <v-dialog v-model="workDialog" max-width="800" scrollable>
       <v-card v-if="selectedWork">
         <v-img
           :src="selectedWork.image"
@@ -101,7 +99,8 @@
           {{ selectedWork.title }}
         </v-card-title>
         <v-card-subtitle class="text-jutta-600">
-          {{ selectedWork.technique }} • {{ selectedWork.year }} • {{ selectedWork.size }}
+          {{ selectedWork.technique }} • {{ selectedWork.year }} •
+          {{ selectedWork.size }}
         </v-card-subtitle>
         <v-card-text>
           <p class="text-lg jutta-text mb-4">
@@ -118,11 +117,7 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer />
-          <v-btn
-            color="jutta-900"
-            variant="text"
-            @click="workDialog = false"
-          >
+          <v-btn color="jutta-900" variant="text" @click="workDialog = false">
             Schließen
           </v-btn>
         </v-card-actions>
@@ -132,13 +127,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import {ref, computed} from 'vue';
 
-const selectedCategory = ref('Alle')
-const workDialog = ref(false)
-const selectedWork = ref(null)
+const selectedCategory = ref('Alle');
+const workDialog = ref(false);
+const selectedWork = ref(null);
 
-const categories = ['Alle', 'Ölmalerei', 'Aquarell', 'Mischtechnik', 'Zeichnung']
+const categories = [
+  'Alle',
+  'Ölmalerei',
+  'Aquarell',
+  'Mischtechnik',
+  'Zeichnung',
+];
 
 const works = [
   {
@@ -148,9 +149,11 @@ const works = [
     year: '2024',
     size: '80x60 cm',
     category: 'Ölmalerei',
-    description: 'Ein Werk über die Kraft der Stille und die Schönheit des Moments.',
-    story: 'Entstanden in einem ruhigen Herbstmorgen, als das Licht durch die Bäume fiel und eine magische Atmosphäre schuf.',
-    image: '/src/assets/images/werk-1.jpg'
+    description:
+      'Ein Werk über die Kraft der Stille und die Schönheit des Moments.',
+    story:
+      'Entstanden in einem ruhigen Herbstmorgen, als das Licht durch die Bäume fiel und eine magische Atmosphäre schuf.',
+    image: '/src/assets/images/werk-1.jpg',
   },
   {
     id: 2,
@@ -159,9 +162,11 @@ const works = [
     year: '2023',
     size: '60x80 cm',
     category: 'Mischtechnik',
-    description: 'Eine Collage aus Erinnerungen und Träumen, die das Leben prägen.',
-    story: 'Dieses Werk entstand während einer Phase der Reflexion über vergangene Jahre und wichtige Begegnungen.',
-    image: '/src/assets/images/werk-2.jpg'
+    description:
+      'Eine Collage aus Erinnerungen und Träumen, die das Leben prägen.',
+    story:
+      'Dieses Werk entstand während einer Phase der Reflexion über vergangene Jahre und wichtige Begegnungen.',
+    image: '/src/assets/images/werk-2.jpg',
   },
   {
     id: 3,
@@ -171,8 +176,9 @@ const works = [
     size: '40x50 cm',
     category: 'Aquarell',
     description: 'Die Seele der Natur in zarten Aquarellfarben eingefangen.',
-    story: 'Inspiriert von einem Spaziergang durch den Wald, wo ich die Verbindung zwischen Mensch und Natur spürte.',
-    image: '/src/assets/images/werk-3.jpg'
+    story:
+      'Inspiriert von einem Spaziergang durch den Wald, wo ich die Verbindung zwischen Mensch und Natur spürte.',
+    image: '/src/assets/images/werk-3.jpg',
   },
   {
     id: 4,
@@ -182,8 +188,9 @@ const works = [
     size: '100x70 cm',
     category: 'Ölmalerei',
     description: 'Das Spiel von Licht und Schatten als Metapher für das Leben.',
-    story: 'Entstanden in meinem Atelier, als das Nachmittagslicht durch das Fenster fiel und faszinierende Schatten warf.',
-    image: '/src/assets/images/werk-4.jpg'
+    story:
+      'Entstanden in meinem Atelier, als das Nachmittagslicht durch das Fenster fiel und faszinierende Schatten warf.',
+    image: '/src/assets/images/werk-4.jpg',
   },
   {
     id: 5,
@@ -192,9 +199,11 @@ const works = [
     year: '2022',
     size: '30x40 cm',
     category: 'Aquarell',
-    description: 'Die ersten zarten Zeichen des Frühlings in leichten Aquarellfarben.',
-    story: 'Gemalt an einem milden Märztag, als die ersten Knospen zu sehen waren.',
-    image: '/src/assets/images/werk-5.jpg'
+    description:
+      'Die ersten zarten Zeichen des Frühlings in leichten Aquarellfarben.',
+    story:
+      'Gemalt an einem milden Märztag, als die ersten Knospen zu sehen waren.',
+    image: '/src/assets/images/werk-5.jpg',
   },
   {
     id: 6,
@@ -204,26 +213,27 @@ const works = [
     size: '70x90 cm',
     category: 'Mischtechnik',
     description: 'Experimentelle Formen und Farben, die Emotionen ausdrücken.',
-    story: 'Ein freies Experiment ohne Vorplanung, das aus dem Moment heraus entstand.',
-    image: '/src/assets/images/werk-6.jpg'
-  }
-]
+    story:
+      'Ein freies Experiment ohne Vorplanung, das aus dem Moment heraus entstand.',
+    image: '/src/assets/images/werk-6.jpg',
+  },
+];
 
 const filteredWorks = computed(() => {
   if (selectedCategory.value === 'Alle') {
-    return works
+    return works;
   }
-  return works.filter(work => work.category === selectedCategory.value)
-})
+  return works.filter((work) => work.category === selectedCategory.value);
+});
 
 const openWork = (work: any) => {
-  selectedWork.value = work
-  workDialog.value = true
-}
+  selectedWork.value = work;
+  workDialog.value = true;
+};
 
 const handleImageError = () => {
   // Handle image loading errors
-}
+};
 </script>
 
 <style scoped>
