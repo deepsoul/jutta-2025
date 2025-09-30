@@ -84,7 +84,7 @@
           <v-col cols="12" lg="6">
             <div class="aspect-square bg-jutta-100 rounded-lg overflow-hidden">
               <img
-                src="/src/assets/images/atelier-kontakt.jpg"
+                src="/assets/atelier-kontakt.jpg"
                 alt="Jutta Horn im Atelier"
                 class="w-full h-full object-cover"
                 @error="handleImageError"

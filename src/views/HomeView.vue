@@ -41,7 +41,7 @@
                 class="aspect-square bg-jutta-100 rounded-lg overflow-hidden"
               >
                 <img
-                  src="/src/assets/images/jutta-portrait.jpg"
+                  src="/assets/jutta-portrait.jpg"
                   alt="Jutta Horn"
                   class="w-full h-full object-cover"
                   @error="handleImageError"
@@ -200,19 +200,19 @@ const featuredWorks = [
     title: 'Kunstwerk 1',
     technique: 'Öl auf Leinwand',
     year: '2022',
-    image: '/src/assets/images/jutta_horn_art_1.jpg',
+    image: '/assets/jutta_horn_art_1.jpg',
   },
   {
     title: 'Kunstwerk 2',
     technique: 'Mischtechnik',
     year: '2022',
-    image: '/src/assets/images/jutta_horn_art_2.jpg',
+    image: '/assets/jutta_horn_art_2.jpg',
   },
   {
     title: 'Kunstwerk 3',
     technique: 'Aquarell',
     year: '2022',
-    image: '/src/assets/images/jutta_horn_art_3.jpg',
+    image: '/assets/jutta_horn_art_3.jpg',
   },
 ];
 

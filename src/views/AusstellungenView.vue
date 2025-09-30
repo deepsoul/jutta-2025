@@ -198,7 +198,7 @@ const currentExhibitions = [
     description:
       'Jutta Horn & Gerda Steimle - Vernissage am 07.04.2024 um 11:15 Uhr',
     website: 'https://www.kulturforum-rutesheim.de',
-    image: '/src/assets/images/retrospektive-2024.jpg',
+    image: '/assets/retrospektive-2024.jpg',
   },
 ];
 
@@ -210,7 +210,7 @@ const pastExhibitions = [
     dates: 'März - Mai 2023',
     description:
       'Eine Einzelausstellung mit Werken aus den letzten zwei Jahren, die sich mit dem Thema Zeit und Erinnerung beschäftigen.',
-    image: '/src/assets/images/ausstellung-1.jpg',
+    image: '/assets/ausstellung-1.jpg',
   },
   {
     id: 2,
@@ -219,7 +219,7 @@ const pastExhibitions = [
     dates: 'Oktober - Dezember 2022',
     description:
       'Gemeinsame Ausstellung mit drei weiteren Künstlerinnen zum Thema der Verbindung zwischen Mensch und Natur.',
-    image: '/src/assets/images/ausstellung-2.jpg',
+    image: '/assets/ausstellung-2.jpg',
   },
   {
     id: 3,
@@ -228,7 +228,7 @@ const pastExhibitions = [
     dates: 'Juni - August 2022',
     description:
       'Eine intime Präsentation neuer Arbeiten in meinem eigenen Atelier für Freunde und Sammler.',
-    image: '/src/assets/images/ausstellung-3.jpg',
+    image: '/assets/ausstellung-3.jpg',
   },
   {
     id: 4,
@@ -237,7 +237,7 @@ const pastExhibitions = [
     dates: 'Februar - April 2022',
     description:
       'Teilnahme an der Gruppenausstellung "Frauen in der Kunst" mit einer Auswahl meiner Aquarell- und Ölbilder.',
-    image: '/src/assets/images/ausstellung-4.jpg',
+    image: '/assets/ausstellung-4.jpg',
   },
 ];
 

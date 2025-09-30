@@ -152,7 +152,7 @@ const works = [
     description: 'Ein ausdrucksstarkes Werk aus Jutta Horns Sammlung.',
     story:
       'Dieses Werk zeigt die charakteristische Handschrift der Künstlerin.',
-    image: '/src/assets/images/jutta_horn_art_1.jpg',
+    image: '/assets/jutta_horn_art_1.jpg',
   },
   {
     id: 2,
@@ -163,7 +163,7 @@ const works = [
     category: 'Mischtechnik',
     description: 'Ein weiteres beeindruckendes Werk aus der Sammlung.',
     story: 'Die Komposition zeigt Jutta Horns künstlerische Entwicklung.',
-    image: '/src/assets/images/jutta_horn_art_2.jpg',
+    image: '/assets/jutta_horn_art_2.jpg',
   },
   {
     id: 3,
@@ -175,7 +175,7 @@ const works = [
     description: 'Ein Werk, das die künstlerische Vision widerspiegelt.',
     story:
       'Entstanden in einer Phase intensiver künstlerischer Auseinandersetzung.',
-    image: '/src/assets/images/jutta_horn_art_3.jpg',
+    image: '/assets/jutta_horn_art_3.jpg',
   },
   {
     id: 4,
@@ -187,7 +187,7 @@ const works = [
     description: 'Ein zartes Aquarell mit starker emotionaler Ausdruckskraft.',
     story:
       'Die Leichtigkeit des Aquarells verbindet sich mit tiefem künstlerischem Ausdruck.',
-    image: '/src/assets/images/jutta_horn_art_4.jpg',
+    image: '/assets/jutta_horn_art_4.jpg',
   },
   {
     id: 5,
@@ -198,7 +198,7 @@ const works = [
     category: 'Ölmalerei',
     description: 'Ein kraftvolles Werk mit starker Präsenz.',
     story: 'Die Ölmalerei ermöglicht tiefe Schichtungen und reiche Texturen.',
-    image: '/src/assets/images/jutta_horn_art_6.jpg',
+    image: '/assets/jutta_horn_art_6.jpg',
   },
   {
     id: 6,
@@ -211,7 +211,7 @@ const works = [
       'Experimentelle Techniken schaffen einzigartige Ausdrucksmöglichkeiten.',
     story:
       'Die Kombination verschiedener Medien eröffnet neue künstlerische Wege.',
-    image: '/src/assets/images/jutta_horn_art_7.jpg',
+    image: '/assets/jutta_horn_art_7.jpg',
   },
   {
     id: 7,
@@ -223,7 +223,7 @@ const works = [
     description: 'Ein weiteres Meisterwerk aus der Sammlung.',
     story:
       'Jedes Werk erzählt eine eigene Geschichte und zeigt die Entwicklung der Künstlerin.',
-    image: '/src/assets/images/jutta_horn_art_9.jpg',
+    image: '/assets/jutta_horn_art_9.jpg',
   },
   {
     id: 8,
@@ -234,7 +234,7 @@ const works = [
     category: 'Aquarell',
     description: 'Die Transparenz des Aquarells schafft besondere Stimmungen.',
     story: 'Aquarellmalerei erfordert Präzision und gleichzeitig Spontaneität.',
-    image: '/src/assets/images/jutta_horn_art_11.jpg',
+    image: '/assets/jutta_horn_art_11.jpg',
   },
   {
     id: 9,
@@ -246,7 +246,7 @@ const works = [
     description:
       'Verschiedene Materialien verbinden sich zu einem harmonischen Ganzen.',
     story: 'Die Mischtechnik ermöglicht unendliche Variationsmöglichkeiten.',
-    image: '/src/assets/images/jutta_horn_art_12.jpg',
+    image: '/assets/jutta_horn_art_12.jpg',
   },
   {
     id: 10,
@@ -257,7 +257,7 @@ const works = [
     category: 'Ölmalerei',
     description: 'Ein Werk, das die künstlerische Reife zeigt.',
     story: 'Jahrelange Erfahrung spiegelt sich in jedem Pinselstrich wider.',
-    image: '/src/assets/images/jutta_horn_art_13.jpg',
+    image: '/assets/jutta_horn_art_13.jpg',
   },
   {
     id: 11,
@@ -268,7 +268,7 @@ const works = [
     category: 'Aquarell',
     description: 'Leichtigkeit und Tiefe vereinen sich in diesem Werk.',
     story: 'Das Aquarell fängt flüchtige Momente für die Ewigkeit ein.',
-    image: '/src/assets/images/jutta_horn_art_14.jpg',
+    image: '/assets/jutta_horn_art_14.jpg',
   },
   {
     id: 12,
@@ -279,7 +279,7 @@ const works = [
     category: 'Ölmalerei',
     description: 'Ein kraftvolles Statement der Künstlerin.',
     story: 'Jedes Werk ist ein Dialog zwischen Künstlerin und Betrachter.',
-    image: '/src/assets/images/jutta_horn_art_15.jpg',
+    image: '/assets/jutta_horn_art_15.jpg',
   },
 ];
 
