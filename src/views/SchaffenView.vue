@@ -131,7 +131,7 @@ import {ref, computed} from 'vue';
 
 const selectedCategory = ref('Alle');
 const workDialog = ref(false);
-const selectedWork = ref(null);
+const selectedWork = ref<any>(null);
 
 const categories = [
   'Alle',
@@ -150,7 +150,8 @@ const works = [
     size: '2152x2096 cm',
     category: 'Ölmalerei',
     description: 'Ein ausdrucksstarkes Werk aus Jutta Horns Sammlung.',
-    story: 'Dieses Werk zeigt die charakteristische Handschrift der Künstlerin.',
+    story:
+      'Dieses Werk zeigt die charakteristische Handschrift der Künstlerin.',
     image: '/src/assets/images/jutta_horn_art_1.jpg',
   },
   {
@@ -172,7 +173,8 @@ const works = [
     size: '2152x2096 cm',
     category: 'Ölmalerei',
     description: 'Ein Werk, das die künstlerische Vision widerspiegelt.',
-    story: 'Entstanden in einer Phase intensiver künstlerischer Auseinandersetzung.',
+    story:
+      'Entstanden in einer Phase intensiver künstlerischer Auseinandersetzung.',
     image: '/src/assets/images/jutta_horn_art_3.jpg',
   },
   {
@@ -183,7 +185,8 @@ const works = [
     size: '2152x2096 cm',
     category: 'Aquarell',
     description: 'Ein zartes Aquarell mit starker emotionaler Ausdruckskraft.',
-    story: 'Die Leichtigkeit des Aquarells verbindet sich mit tiefem künstlerischem Ausdruck.',
+    story:
+      'Die Leichtigkeit des Aquarells verbindet sich mit tiefem künstlerischem Ausdruck.',
     image: '/src/assets/images/jutta_horn_art_4.jpg',
   },
   {
@@ -204,8 +207,10 @@ const works = [
     year: '2022',
     size: '2152x2096 cm',
     category: 'Mischtechnik',
-    description: 'Experimentelle Techniken schaffen einzigartige Ausdrucksmöglichkeiten.',
-    story: 'Die Kombination verschiedener Medien eröffnet neue künstlerische Wege.',
+    description:
+      'Experimentelle Techniken schaffen einzigartige Ausdrucksmöglichkeiten.',
+    story:
+      'Die Kombination verschiedener Medien eröffnet neue künstlerische Wege.',
     image: '/src/assets/images/jutta_horn_art_7.jpg',
   },
   {
@@ -216,7 +221,8 @@ const works = [
     size: '2152x2096 cm',
     category: 'Ölmalerei',
     description: 'Ein weiteres Meisterwerk aus der Sammlung.',
-    story: 'Jedes Werk erzählt eine eigene Geschichte und zeigt die Entwicklung der Künstlerin.',
+    story:
+      'Jedes Werk erzählt eine eigene Geschichte und zeigt die Entwicklung der Künstlerin.',
     image: '/src/assets/images/jutta_horn_art_9.jpg',
   },
   {
@@ -237,7 +243,8 @@ const works = [
     year: '2022',
     size: '2152x2096 cm',
     category: 'Mischtechnik',
-    description: 'Verschiedene Materialien verbinden sich zu einem harmonischen Ganzen.',
+    description:
+      'Verschiedene Materialien verbinden sich zu einem harmonischen Ganzen.',
     story: 'Die Mischtechnik ermöglicht unendliche Variationsmöglichkeiten.',
     image: '/src/assets/images/jutta_horn_art_12.jpg',
   },

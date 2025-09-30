@@ -1,0 +1,10 @@
+{
+  "orgId": "team_jutta_horn",
+  "projectId": "jutta-horn-2025",
+  "settings": {
+    "buildCommand": "npm run build",
+    "outputDirectory": "dist",
+    "framework": "vite",
+    "installCommand": "npm install"
+  }
+}
