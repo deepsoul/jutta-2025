@@ -253,24 +253,46 @@ const privacyRules = [
 const submitForm = async () => {
   formLoading.value = true;
 
-  // Simulate form submission
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  try {
+    const response = await fetch('/api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: form.value.name,
+        email: form.value.email,
+        subject: form.value.subject,
+        message: form.value.message,
+      }),
+    });
 
-  // Reset form
-  form.value = {
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-    privacy: false,
-  };
+    const result = await response.json();
 
-  formLoading.value = false;
+    if (response.ok) {
+      // Reset form
+      form.value = {
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+        privacy: false,
+      };
 
-  // Show success message (you could use a toast notification here)
-  alert(
-    'Vielen Dank für Ihre Nachricht! Ich werde mich bald bei Ihnen melden.',
-  );
+      // Show success message
+      alert(
+        'Vielen Dank für Ihre Nachricht! Sie erhalten eine Bestätigungs-E-Mail. Ich werde mich bald bei Ihnen melden.',
+      );
+    } else {
+      // Show error message
+      alert(`Fehler beim Senden: ${result.error || 'Unbekannter Fehler'}`);
+    }
+  } catch (error) {
+    console.error('Error submitting form:', error);
+    alert('Fehler beim Senden der Nachricht. Bitte versuchen Sie es später erneut.');
+  } finally {
+    formLoading.value = false;
+  }
 };
 
 const handleImageError = () => {
