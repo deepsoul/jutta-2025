@@ -284,7 +284,7 @@ const validateAll = () => {
   validateSubject();
   validateMessage();
   validatePrivacy();
-  
+
   return (
     nameErrors.value.length === 0 &&
     emailErrors.value.length === 0 &&
@@ -327,7 +327,7 @@ const submitForm = async () => {
         message: '',
         privacy: false,
       };
-      
+
       // Clear all error messages
       nameErrors.value = [];
       emailErrors.value = [];
