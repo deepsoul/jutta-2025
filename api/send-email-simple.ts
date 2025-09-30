@@ -31,8 +31,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (missingVars.length > 0) {
       return res.status(500).json({
         error: 'E-Mail-Konfiguration unvollständig',
-        message: 'Folgende Umgebungsvariablen fehlen: ' + missingVars.join(', '),
-        instructions: 'Bitte setzen Sie die All-Inkl E-Mail-Konfiguration in Vercel',
+        message:
+          'Folgende Umgebungsvariablen fehlen: ' + missingVars.join(', '),
+        instructions:
+          'Bitte setzen Sie die All-Inkl E-Mail-Konfiguration in Vercel',
         required_vars: [
           'SMTP_HOST=mail.juttahorn.de',
           'SMTP_PORT=587',
@@ -40,8 +42,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           'SMTP_USER=info@juttahorn.de',
           'SMTP_PASS=ihr-email-passwort',
           'SMTP_FROM=info@juttahorn.de',
-          'CONTACT_EMAIL=info@juttahorn.de'
-        ]
+          'CONTACT_EMAIL=info@juttahorn.de',
+        ],
       });
     }
 
@@ -54,17 +56,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         name,
         email,
         subject,
-        message: message.substring(0, 50) + '...'
+        message: message.substring(0, 50) + '...',
       },
       smtp_config: {
         host: process.env.SMTP_HOST,
         port: process.env.SMTP_PORT || '587',
         user: process.env.SMTP_USER,
         from: process.env.SMTP_FROM || process.env.SMTP_USER,
-        to: process.env.CONTACT_EMAIL || 'info@juttahorn.de'
-      }
+        to: process.env.CONTACT_EMAIL || 'info@juttahorn.de',
+      },
     });
-
   } catch (error) {
     console.error('Error in send-email-simple:', error);
     return res.status(500).json({
