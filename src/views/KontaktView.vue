@@ -102,7 +102,7 @@
           <v-col cols="12" lg="8" class="mx-auto">
             <h2 class="jutta-subheading mb-8 text-center">Schreiben Sie mir</h2>
 
-            <v-form @submit.prevent="submitForm" ref="form">
+            <v-form @submit.prevent="submitForm" ref="form" validate-on="submit">
               <v-row>
                 <v-col cols="12" md="6">
                   <v-text-field
@@ -111,6 +111,7 @@
                     :rules="nameRules"
                     variant="outlined"
                     required
+                    validate-on="blur"
                   />
                 </v-col>
                 <v-col cols="12" md="6">
@@ -121,6 +122,7 @@
                     :rules="emailRules"
                     variant="outlined"
                     required
+                    validate-on="blur"
                   />
                 </v-col>
                 <v-col cols="12">
@@ -130,6 +132,7 @@
                     :rules="subjectRules"
                     variant="outlined"
                     required
+                    validate-on="blur"
                   />
                 </v-col>
                 <v-col cols="12">
@@ -140,6 +143,7 @@
                     variant="outlined"
                     rows="6"
                     required
+                    validate-on="blur"
                   />
                 </v-col>
                 <v-col cols="12">
@@ -147,6 +151,7 @@
                     v-model="form.privacy"
                     :rules="privacyRules"
                     required
+                    validate-on="blur"
                   >
                     <template v-slot:label>
                       <span class="text-sm text-jutta-700">
