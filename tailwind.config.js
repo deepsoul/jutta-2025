@@ -7,10 +7,12 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
-        serif: ['Playfair Display', 'ui-serif', 'Georgia'],
-      },
+            fontFamily: {
+              sans: ['Source Sans Pro', 'ui-sans-serif', 'system-ui'],
+              serif: ['Playfair Display', 'ui-serif', 'Georgia'],
+              display: ['Playfair Display', 'ui-serif', 'Georgia'],
+              body: ['Source Sans Pro', 'ui-sans-serif', 'system-ui'],
+            },
       colors: {
         jutta: {
           50: '#fafafa',

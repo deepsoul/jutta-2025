@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    font-family: 'Inter', ui-sans-serif, system-ui;
+    font-family: 'Source Sans Pro', ui-sans-serif, system-ui;
   }
 
   h1,
@@ -14,6 +14,12 @@
   h5,
   h6 {
     font-family: 'Playfair Display', ui-serif, Georgia;
+    font-weight: 600;
+  }
+
+  body {
+    font-family: 'Source Sans Pro', ui-sans-serif, system-ui;
+    font-weight: 400;
   }
 }
 
@@ -27,14 +33,22 @@
   }
 
   .jutta-text {
-    @apply text-jutta-700 leading-relaxed;
+    @apply text-jutta-700 leading-relaxed font-body;
   }
 
   .jutta-heading {
-    @apply text-4xl lg:text-6xl font-serif font-medium text-jutta-900;
+    @apply text-4xl lg:text-6xl font-display font-semibold text-jutta-900;
   }
 
   .jutta-subheading {
-    @apply text-2xl lg:text-3xl font-serif font-medium text-jutta-800;
+    @apply text-2xl lg:text-3xl font-display font-semibold text-jutta-800;
+  }
+
+  .jutta-body {
+    @apply font-body text-jutta-700 leading-relaxed;
+  }
+
+  .jutta-quote {
+    @apply font-display text-xl lg:text-2xl italic text-jutta-600 leading-relaxed;
   }
 }
