@@ -5,10 +5,12 @@
       <router-view />
     </v-main>
     <AppFooter />
+    <CookieConsent />
   </v-app>
 </template>
 
 <script setup lang="ts">
 import AppHeader from './components/AppHeader.vue';
 import AppFooter from './components/AppFooter.vue';
+import CookieConsent from './components/CookieConsent.vue';
 </script>
