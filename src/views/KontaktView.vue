@@ -159,19 +159,43 @@
                     </template>
                   </v-checkbox>
                 </v-col>
-                <v-col cols="12" class="text-center">
-                  <v-btn
-                    type="submit"
-                    color="jutta-900"
-                    size="large"
-                    :loading="formLoading"
-                    class="text-white"
-                  >
-                    Nachricht senden
-                  </v-btn>
-                </v-col>
-              </v-row>
-            </v-form>
+        <v-col cols="12" class="text-center">
+          <v-btn
+            type="submit"
+            color="jutta-900"
+            size="large"
+            :loading="formLoading"
+            class="text-white"
+          >
+            Nachricht senden
+          </v-btn>
+        </v-col>
+      </v-row>
+    </v-form>
+
+    <!-- Snackbar für Benachrichtigungen -->
+    <v-snackbar
+      v-model="snackbar.show"
+      :color="snackbar.color"
+      :timeout="snackbar.timeout"
+      location="bottom"
+      class="mb-4"
+    >
+      <div class="d-flex align-center">
+        <v-icon :icon="snackbar.icon" class="mr-3"></v-icon>
+        <span>{{ snackbar.message }}</span>
+      </div>
+      
+      <template v-slot:actions>
+        <v-btn
+          color="white"
+          variant="text"
+          @click="snackbar.show = false"
+          icon="mdi-close"
+          size="small"
+        ></v-btn>
+      </template>
+    </v-snackbar>
           </v-col>
         </v-row>
       </v-container>
@@ -225,6 +249,15 @@ const form = ref({
 });
 
 const formLoading = ref(false);
+
+// Snackbar für Benachrichtigungen
+const snackbar = ref({
+  show: false,
+  message: '',
+  color: 'success',
+  icon: 'mdi-check-circle',
+  timeout: 4000,
+});
 
 // Error states for manual validation
 const nameErrors = ref<string[]>([]);
@@ -284,7 +317,7 @@ const validateAll = () => {
   validateSubject();
   validateMessage();
   validatePrivacy();
-
+  
   return (
     nameErrors.value.length === 0 &&
     emailErrors.value.length === 0 &&
@@ -292,6 +325,15 @@ const validateAll = () => {
     messageErrors.value.length === 0 &&
     privacyErrors.value.length === 0
   );
+};
+
+// Snackbar-Hilfsfunktionen
+const showSnackbar = (message: string, type: 'success' | 'error' | 'warning' = 'success') => {
+  snackbar.value.message = message;
+  snackbar.value.color = type === 'success' ? 'success' : type === 'error' ? 'error' : 'warning';
+  snackbar.value.icon = type === 'success' ? 'mdi-check-circle' : type === 'error' ? 'mdi-alert-circle' : 'mdi-information';
+  snackbar.value.timeout = 4000;
+  snackbar.value.show = true;
 };
 
 const submitForm = async () => {
@@ -339,21 +381,23 @@ const submitForm = async () => {
       messageErrors.value = [];
       privacyErrors.value = [];
 
-      // Show success message
-      alert(
-        'Vielen Dank für Ihre Nachricht! Sie erhalten eine Bestätigungs-E-Mail. Ich werde mich bald bei Ihnen melden.',
-      );
+              // Show success message
+              showSnackbar(
+                'Vielen Dank für Ihre Nachricht! Sie erhalten eine Bestätigungs-E-Mail. Ich werde mich bald bei Ihnen melden.',
+                'success'
+              );
     } else {
       // Show error message
       const errorMessage = result.details
         ? result.details.join(', ')
         : result.error || 'Unbekannter Fehler';
-      alert(`Fehler beim Senden: ${errorMessage}`);
+      showSnackbar(`Fehler beim Senden: ${errorMessage}`, 'error');
     }
   } catch (error) {
     console.error('Error submitting form:', error);
-    alert(
+    showSnackbar(
       'Fehler beim Senden der Nachricht. Bitte versuchen Sie es später erneut oder kontaktieren Sie uns direkt unter info@juttahorn.de',
+      'error'
     );
   } finally {
     formLoading.value = false;
