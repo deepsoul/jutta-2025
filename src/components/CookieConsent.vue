@@ -11,7 +11,7 @@
 
     <!-- Dialog -->
     <div
-      class="relative bg-white rounded-lg shadow-2xl max-w-md w-full mx-4 transform transition-all duration-300 scale-100"
+      class="relative bg-white rounded-lg shadow-2xl max-w-lg w-full mx-4 transform transition-all duration-300 scale-100"
     >
       <!-- Header -->
       <div class="px-6 py-4 border-b border-jutta-200">
