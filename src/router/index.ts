@@ -29,6 +29,12 @@ const router = createRouter({
       name: 'kontakt',
       component: () => import('../views/KontaktView.vue'),
     },
+    {
+      path: '/artwork/:id',
+      name: 'artwork-detail',
+      component: () => import('../views/ArtworkDetailView.vue'),
+      props: true,
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {

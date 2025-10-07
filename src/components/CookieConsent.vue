@@ -1,13 +1,18 @@
 <template>
-  <div v-if="showDialog" class="fixed inset-0 z-50 flex items-center justify-center p-4">
+  <div
+    v-if="showDialog"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4"
+  >
     <!-- Backdrop -->
-    <div 
+    <div
       class="absolute inset-0 bg-black bg-opacity-50 transition-opacity duration-300"
       @click="closeDialog"
     ></div>
-    
+
     <!-- Dialog -->
-    <div class="relative bg-white rounded-lg shadow-2xl max-w-md w-full mx-4 transform transition-all duration-300 scale-100">
+    <div
+      class="relative bg-white rounded-lg shadow-2xl max-w-md w-full mx-4 transform transition-all duration-300 scale-100"
+    >
       <!-- Header -->
       <div class="px-6 py-4 border-b border-jutta-200">
         <div class="flex items-center">
@@ -17,14 +22,14 @@
           </h3>
         </div>
       </div>
-      
+
       <!-- Content -->
       <div class="px-6 py-4">
         <p class="text-jutta-700 mb-4 leading-relaxed">
-          Wir verwenden Cookies, um Ihnen die beste Erfahrung auf unserer Website zu bieten. 
-          Sie können Ihre Einstellungen jederzeit anpassen.
+          Wir verwenden Cookies, um Ihnen die beste Erfahrung auf unserer
+          Website zu bieten. Sie können Ihre Einstellungen jederzeit anpassen.
         </p>
-        
+
         <!-- Cookie Categories -->
         <div class="space-y-4">
           <!-- Essential Cookies -->
@@ -34,7 +39,8 @@
                 Notwendige Cookies
               </h4>
               <p class="text-xs text-jutta-600">
-                Diese Cookies sind für die Grundfunktionen der Website erforderlich.
+                Diese Cookies sind für die Grundfunktionen der Website
+                erforderlich.
               </p>
             </div>
             <v-switch
@@ -45,7 +51,7 @@
               hide-details
             ></v-switch>
           </div>
-          
+
           <!-- Analytics Cookies -->
           <div class="flex items-start justify-between">
             <div class="flex-1">
@@ -53,7 +59,8 @@
                 Analyse-Cookies
               </h4>
               <p class="text-xs text-jutta-600">
-                Helfen uns zu verstehen, wie Besucher mit der Website interagieren.
+                Helfen uns zu verstehen, wie Besucher mit der Website
+                interagieren.
               </p>
             </div>
             <v-switch
@@ -63,7 +70,7 @@
               hide-details
             ></v-switch>
           </div>
-          
+
           <!-- Marketing Cookies -->
           <div class="flex items-start justify-between">
             <div class="flex-1">
@@ -83,7 +90,7 @@
           </div>
         </div>
       </div>
-      
+
       <!-- Footer -->
       <div class="px-6 py-4 border-t border-jutta-200 bg-jutta-50">
         <div class="flex flex-col sm:flex-row gap-3">
@@ -95,7 +102,7 @@
           >
             Nur Notwendige
           </v-btn>
-          
+
           <v-btn
             variant="outlined"
             color="jutta-600"
@@ -104,33 +111,35 @@
           >
             {{ showDetails ? 'Weniger' : 'Details' }}
           </v-btn>
-          
-          <v-btn
-            color="jutta-900"
-            @click="acceptAll"
-            class="flex-1 text-white"
-          >
+
+          <v-btn color="jutta-900" @click="acceptAll" class="flex-1 text-white">
             Alle Akzeptieren
           </v-btn>
         </div>
       </div>
-      
+
       <!-- Details Section -->
-      <div v-if="showDetails" class="px-6 py-4 border-t border-jutta-200 bg-jutta-50">
+      <div
+        v-if="showDetails"
+        class="px-6 py-4 border-t border-jutta-200 bg-jutta-50"
+      >
         <div class="space-y-3">
           <div>
-            <h4 class="text-sm font-medium text-jutta-900 mb-2">Google Analytics</h4>
+            <h4 class="text-sm font-medium text-jutta-900 mb-2">
+              Google Analytics
+            </h4>
             <p class="text-xs text-jutta-600 mb-2">
-              Wir verwenden Google Analytics, um zu verstehen, wie Besucher unsere Website nutzen. 
-              Diese Daten helfen uns, die Website zu verbessern.
+              Wir verwenden Google Analytics, um zu verstehen, wie Besucher
+              unsere Website nutzen. Diese Daten helfen uns, die Website zu
+              verbessern.
             </p>
             <div class="text-xs text-jutta-500">
-              <strong>Anbieter:</strong> Google LLC<br>
-              <strong>Zweck:</strong> Website-Analyse<br>
-              <strong>Datenschutz:</strong> 
-              <a 
-                href="https://policies.google.com/privacy" 
-                target="_blank" 
+              <strong>Anbieter:</strong> Google LLC<br />
+              <strong>Zweck:</strong> Website-Analyse<br />
+              <strong>Datenschutz:</strong>
+              <a
+                href="https://policies.google.com/privacy"
+                target="_blank"
                 class="text-jutta-600 hover:text-jutta-900 underline"
               >
                 Google Datenschutzerklärung
@@ -144,7 +153,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, watch } from 'vue';
+import {ref, onMounted, watch} from 'vue';
 
 // State
 const showDialog = ref(false);
@@ -166,7 +175,7 @@ const hasConsent = () => {
 const loadPreferences = () => {
   const analytics = localStorage.getItem(COOKIE_ANALYTICS_KEY);
   const marketing = localStorage.getItem(COOKIE_MARKETING_KEY);
-  
+
   analyticsEnabled.value = analytics === 'true';
   marketingEnabled.value = marketing === 'true';
 };
@@ -186,18 +195,18 @@ const initGoogleAnalytics = () => {
     script.async = true;
     script.src = 'https://www.googletagmanager.com/gtag/js?id=G-H60N6X4QFN';
     document.head.appendChild(script);
-    
+
     // Initialize gtag
     window.dataLayer = window.dataLayer || [];
     function gtag(...args: any[]) {
       window.dataLayer.push(args);
     }
     window.gtag = gtag;
-    
+
     gtag('js', new Date());
     gtag('config', 'G-H60N6X4QFN', {
       anonymize_ip: true,
-      cookie_flags: 'SameSite=None;Secure'
+      cookie_flags: 'SameSite=None;Secure',
     });
   }
 };
@@ -234,7 +243,7 @@ const updateAnalytics = () => {
     // Disable analytics if already loaded
     if (window.gtag) {
       gtag('config', 'G-H60N6X4QFN', {
-        send_page_view: false
+        send_page_view: false,
       });
     }
   }

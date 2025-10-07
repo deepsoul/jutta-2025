@@ -62,7 +62,7 @@
       </v-row>
     </v-container>
   </v-footer>
-  
+
   <!-- Cookie Settings Dialog -->
   <CookieSettings v-model="showCookieSettings" />
 </template>
