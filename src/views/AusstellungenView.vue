@@ -215,24 +215,6 @@ const pastExhibitions = [
   },
   {
     id: 2,
-    title: 'Momentaufnahmen',
-    location: 'Galerie am Markt, Berlin',
-    dates: 'März - Mai 2023',
-    description:
-      'Eine Einzelausstellung mit Werken aus den letzten zwei Jahren, die sich mit dem Thema Zeit und Erinnerung beschäftigen.',
-    image: '/assets/ausstellung-2.jpg',
-  },
-  {
-    id: 3,
-    title: 'Natur und Seele',
-    location: 'Kunstverein München',
-    dates: 'Oktober - Dezember 2022',
-    description:
-      'Gemeinsame Ausstellung mit drei weiteren Künstlerinnen zum Thema der Verbindung zwischen Mensch und Natur.',
-    image: '/assets/ausstellung-3.jpg',
-  },
-  {
-    id: 4,
     title: 'Zeitlose Schönheit',
     location: 'Atelier Jutta Horn, Hamburg',
     dates: 'dauerhaft',
@@ -241,7 +223,7 @@ const pastExhibitions = [
     image: '/assets/ausstellung-4.jpg',
   },
   {
-    id: 5,
+    id: 3,
     title: 'Aquarelle und Ölbilder',
     location: 'Kunsthalle Bremen',
     dates: 'Februar - April 2022',
