@@ -189,7 +189,29 @@
 </template>
 
 <script setup lang="ts">
-const currentExhibitions = [
+type Exhibition = {
+  id: number;
+  title: string;
+  location: string;
+  dates: string;
+  description: string;
+  image: string;
+  website?: string;
+};
+
+const currentExhibitions: Exhibition[] = [
+  {
+    id: 1,
+    title: 'Ausstellung Rathaus Weissach',
+    location: 'Rathaus Weissach',
+    dates: '01.09.2026 - 14.09.2026',
+    description:
+      'Ausstellung vom 01.09.2026 bis 14.09.2026. Vernissage am 28.08.2026 im Rathaus Weissach.',
+    image: '/assets/ausstellung-1.jpg',
+  },
+];
+
+const pastExhibitions: Exhibition[] = [
   {
     id: 1,
     title: 'Gemeinsam - Unterschiedlich, mit allem, was wir finden',
@@ -201,11 +223,8 @@ const currentExhibitions = [
       'https://www.weissach.de/weissach-buerger/leben-wohnen/veranstaltungskalender/3137/vernissage',
     image: '/assets/ausstellung-1.jpg',
   },
-];
-
-const pastExhibitions = [
   {
-    id: 1,
+    id: 2,
     title: 'KUNSTAUSSTELLUNG "Retrospektive"',
     location: 'Rutesheimer Rathaus',
     dates: '07.04.2024 - 04.05.2024',
@@ -214,7 +233,7 @@ const pastExhibitions = [
     image: '/assets/retrospektive-2024.jpg',
   },
   {
-    id: 2,
+    id: 3,
     title: 'Zeitlose Schönheit',
     location: 'Atelier Jutta Horn, Hamburg',
     dates: 'dauerhaft',
@@ -223,7 +242,7 @@ const pastExhibitions = [
     image: '/assets/ausstellung-4.jpg',
   },
   {
-    id: 3,
+    id: 4,
     title: 'Aquarelle und Ölbilder',
     location: 'Kunsthalle Bremen',
     dates: 'Februar - April 2022',
