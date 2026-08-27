@@ -16,7 +16,7 @@ export interface Artwork {
 
 const STORAGE_KEY = 'jutta-horn-artworks';
 const CATALOG_VERSION_KEY = 'jutta-horn-artworks-catalog-version';
-const CATALOG_VERSION = 'jutta-104-no-year';
+const CATALOG_VERSION = 'jutta-104-fotokunst';
 
 const stripSizeAndYear = (artwork: Artwork): Artwork => {
   const next = {...artwork};
@@ -27,7 +27,8 @@ const stripSizeAndYear = (artwork: Artwork): Artwork => {
 
 const applyCatalogMetadata = (stored: Artwork[]): Artwork[] => {
   const seeds = new Map(initialArtworks.map((artwork) => [artwork.id, artwork]));
-  return stored.map((item) => {
+  const storedIds = new Set(stored.map((item) => item.id));
+  const updated = stored.map((item) => {
     const seed = seeds.get(item.id);
     const withoutSizeAndYear = stripSizeAndYear(item);
     if (!seed) {
@@ -36,8 +37,21 @@ const applyCatalogMetadata = (stored: Artwork[]): Artwork[] => {
     return {
       ...withoutSizeAndYear,
       title: seed.title,
+      technique: seed.technique,
+      category: seed.category,
+      description: seed.description,
+      story: seed.story,
+      image: seed.image,
     };
   });
+  const appended = initialArtworks
+    .filter((seed) => !storedIds.has(seed.id))
+    .map((seed) => ({
+      ...stripSizeAndYear(seed),
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    }));
+  return [...updated, ...appended];
 };
 
 // Initial data - this will be loaded into localStorage if not present
@@ -216,6 +230,50 @@ const initialArtworks: Artwork[] = [
     story:
       'Die Kreide ermöglicht lebendige Farben und spontane Ausdruckskraft.',
     image: '/assets/jutta_horn_art_21.jpg',
+  },
+  {
+    id: 19,
+    title: 'Tiefenfluss',
+    technique: 'Fotokunst',
+    category: 'Fotokunst',
+    description:
+      'Organische Strömungen in Blau, Weiß und Schwarz verdichten sich zu einem fließenden Bildraum.',
+    story:
+      'Die Fotografie hält den Moment fest, in dem sich Flüssigkeiten berühren und neue Formen bilden.',
+    image: '/assets/jutta_horn_fotokunst_1.jpg',
+  },
+  {
+    id: 20,
+    title: 'Indigospiegel',
+    technique: 'Fotokunst',
+    category: 'Fotokunst',
+    description:
+      'Ein gebrochenes Kreiszeichen in tiefem Indigo steht in einem texturierten Grau.',
+    story:
+      'Die Bildmitte wirkt wie ein geöffneter Spiegel, der Farbe und Struktur gegeneinanderführt.',
+    image: '/assets/jutta_horn_fotokunst_2.jpg',
+  },
+  {
+    id: 21,
+    title: 'Samenlicht',
+    technique: 'Fotokunst',
+    category: 'Fotokunst',
+    description:
+      'Botanische Silhouetten stehen auf einem rissigen, papiernen Grund in Gold und Violett.',
+    story:
+      'Die Aufnahme sucht das Vergängliche im Pflanzlichen und macht es zur grafischen Spur.',
+    image: '/assets/jutta_horn_fotokunst_3.jpg',
+  },
+  {
+    id: 22,
+    title: 'Hortensienhauch',
+    technique: 'Fotokunst',
+    category: 'Fotokunst',
+    description:
+      'Überlagerte Blütenformen in Violett und Flieder verbinden sich mit einer gealterten Bildoberfläche.',
+    story:
+      'Nahsicht und Textur lösen das Motiv aus der reinen Abbildung und führen es in die Fotokunst.',
+    image: '/assets/jutta_horn_fotokunst_4.jpg',
   },
 ];
 
