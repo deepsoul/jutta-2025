@@ -130,9 +130,6 @@
                 <p class="text-jutta-600 mb-2">
                   {{ work.technique }}
                 </p>
-                <p class="text-sm text-jutta-500 mb-2">
-                  {{ work.year }}
-                </p>
                 <p class="text-sm text-jutta-700 line-clamp-2">
                   {{ work.description }}
                 </p>

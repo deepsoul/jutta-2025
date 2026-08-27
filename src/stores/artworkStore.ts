@@ -4,7 +4,7 @@ export interface Artwork {
   id: number;
   title: string;
   technique: string;
-  year: string;
+  year?: string;
   size?: string;
   category: string;
   description: string;
@@ -16,11 +16,12 @@ export interface Artwork {
 
 const STORAGE_KEY = 'jutta-horn-artworks';
 const CATALOG_VERSION_KEY = 'jutta-horn-artworks-catalog-version';
-const CATALOG_VERSION = 'jutta-104';
+const CATALOG_VERSION = 'jutta-104-no-year';
 
-const stripDimensions = (artwork: Artwork): Artwork => {
+const stripSizeAndYear = (artwork: Artwork): Artwork => {
   const next = {...artwork};
   delete next.size;
+  delete next.year;
   return next;
 };
 
@@ -28,12 +29,12 @@ const applyCatalogMetadata = (stored: Artwork[]): Artwork[] => {
   const seeds = new Map(initialArtworks.map((artwork) => [artwork.id, artwork]));
   return stored.map((item) => {
     const seed = seeds.get(item.id);
-    const withoutSize = stripDimensions(item);
+    const withoutSizeAndYear = stripSizeAndYear(item);
     if (!seed) {
-      return withoutSize;
+      return withoutSizeAndYear;
     }
     return {
-      ...withoutSize,
+      ...withoutSizeAndYear,
       title: seed.title,
     };
   });
@@ -45,7 +46,6 @@ const initialArtworks: Artwork[] = [
     id: 1,
     title: 'Nebelufer',
     technique: 'Öl auf Leinwand',
-    year: '2022',
     category: 'Ölmalerei',
     description: 'Ein ausdrucksstarkes Werk aus Jutta Horns Sammlung.',
     story:
@@ -56,7 +56,6 @@ const initialArtworks: Artwork[] = [
     id: 2,
     title: 'Graue Weite',
     technique: 'Mischtechnik',
-    year: '2022',
     category: 'Mischtechnik',
     description: 'Ein weiteres beeindruckendes Werk aus der Sammlung.',
     story: 'Die Komposition zeigt Jutta Horns künstlerische Entwicklung.',
@@ -66,7 +65,6 @@ const initialArtworks: Artwork[] = [
     id: 3,
     title: 'Lichtband',
     technique: 'Öl auf Leinwand',
-    year: '2022',
     category: 'Ölmalerei',
     description: 'Ein Werk, das die künstlerische Vision widerspiegelt.',
     story:
@@ -77,7 +75,6 @@ const initialArtworks: Artwork[] = [
     id: 4,
     title: 'Silberhorizont',
     technique: 'Aquarell',
-    year: '2022',
     category: 'Aquarell',
     description: 'Ein zartes Aquarell mit starker emotionaler Ausdruckskraft.',
     story:
@@ -88,7 +85,6 @@ const initialArtworks: Artwork[] = [
     id: 5,
     title: 'Dunkle Erde',
     technique: 'Öl auf Leinwand',
-    year: '2022',
     category: 'Ölmalerei',
     description: 'Ein kraftvolles Werk mit starker Präsenz.',
     story: 'Die Ölmalerei ermöglicht tiefe Schichtungen und reiche Texturen.',
@@ -98,7 +94,6 @@ const initialArtworks: Artwork[] = [
     id: 6,
     title: 'Schichtfeuer',
     technique: 'Mischtechnik',
-    year: '2022',
     category: 'Mischtechnik',
     description:
       'Experimentelle Techniken schaffen einzigartige Ausdrucksmöglichkeiten.',
@@ -110,7 +105,6 @@ const initialArtworks: Artwork[] = [
     id: 7,
     title: 'Abendnebel',
     technique: 'Öl auf Leinwand',
-    year: '2022',
     category: 'Ölmalerei',
     description: 'Ein weiteres Meisterwerk aus der Sammlung.',
     story:
@@ -121,7 +115,6 @@ const initialArtworks: Artwork[] = [
     id: 8,
     title: 'Wasserton',
     technique: 'Aquarell',
-    year: '2022',
     category: 'Aquarell',
     description: 'Die Transparenz des Aquarells schafft besondere Stimmungen.',
     story: 'Aquarellmalerei erfordert Präzision und gleichzeitig Spontaneität.',
@@ -131,7 +124,6 @@ const initialArtworks: Artwork[] = [
     id: 9,
     title: 'Zwischenlicht',
     technique: 'Mischtechnik',
-    year: '2022',
     category: 'Mischtechnik',
     description:
       'Verschiedene Materialien verbinden sich zu einem harmonischen Ganzen.',
@@ -142,7 +134,6 @@ const initialArtworks: Artwork[] = [
     id: 10,
     title: 'Stille Fläche',
     technique: 'Öl auf Leinwand',
-    year: '2022',
     category: 'Ölmalerei',
     description: 'Ein Werk, das die künstlerische Reife zeigt.',
     story: 'Jahrelange Erfahrung spiegelt sich in jedem Pinselstrich wider.',
@@ -152,7 +143,6 @@ const initialArtworks: Artwork[] = [
     id: 11,
     title: 'Dunst',
     technique: 'Aquarell',
-    year: '2022',
     category: 'Aquarell',
     description: 'Leichtigkeit und Tiefe vereinen sich in diesem Werk.',
     story: 'Das Aquarell fängt flüchtige Momente für die Ewigkeit ein.',
@@ -162,7 +152,6 @@ const initialArtworks: Artwork[] = [
     id: 12,
     title: 'Echo',
     technique: 'Öl auf Leinwand',
-    year: '2022',
     category: 'Ölmalerei',
     description: 'Ein kraftvolles Statement der Künstlerin.',
     story: 'Jedes Werk ist ein Dialog zwischen Künstlerin und Betrachter.',
@@ -172,7 +161,6 @@ const initialArtworks: Artwork[] = [
     id: 13,
     title: 'Linie im Raum',
     technique: 'Bleistift auf Papier',
-    year: '2021',
     category: 'Zeichnung',
     description:
       'Eine feine Bleistiftzeichnung mit präzisen Linien und Schattierungen.',
@@ -184,7 +172,6 @@ const initialArtworks: Artwork[] = [
     id: 14,
     title: 'Kohlespur',
     technique: 'Kohle auf Papier',
-    year: '2021',
     category: 'Zeichnung',
     description: 'Eine ausdrucksstarke Kohlezeichnung mit starken Kontrasten.',
     story: 'Die Kohle ermöglicht tiefe Schatten und dramatische Effekte.',
@@ -194,7 +181,6 @@ const initialArtworks: Artwork[] = [
     id: 15,
     title: 'Tintenspiel',
     technique: 'Tinte auf Papier',
-    year: '2022',
     category: 'Zeichnung',
     description: 'Eine präzise Tintenzeichnung mit filigranen Details.',
     story: 'Die Tinte erlaubt feine Linien und präzise Ausarbeitungen.',
@@ -204,7 +190,6 @@ const initialArtworks: Artwork[] = [
     id: 16,
     title: 'Rötelwärme',
     technique: 'Rötel auf Papier',
-    year: '2022',
     category: 'Zeichnung',
     description: 'Eine warme Rötelzeichnung mit sanften Übergängen.',
     story:
@@ -215,7 +200,6 @@ const initialArtworks: Artwork[] = [
     id: 17,
     title: 'Doppelschatten',
     technique: 'Bleistift und Kohle',
-    year: '2023',
     category: 'Zeichnung',
     description:
       'Eine Mischtechnik aus Bleistift und Kohle für besondere Effekte.',
@@ -227,7 +211,6 @@ const initialArtworks: Artwork[] = [
     id: 18,
     title: 'Kreideklang',
     technique: 'Kreide auf Papier',
-    year: '2023',
     category: 'Zeichnung',
     description: 'Eine lebendige Kreidezeichnung mit kräftigen Farben.',
     story:
@@ -244,7 +227,7 @@ const loadArtworks = (): Artwork[] => {
     if (stored) {
       const parsed = JSON.parse(stored) as Artwork[];
       if (catalogVersion === CATALOG_VERSION) {
-        return parsed.map(stripDimensions);
+        return parsed.map(stripSizeAndYear);
       }
       const synced = applyCatalogMetadata(parsed);
       saveArtworks(synced);
@@ -257,7 +240,7 @@ const loadArtworks = (): Artwork[] => {
 
   // If no stored data or error, initialize with default data
   const artworks = initialArtworks.map((artwork) => ({
-    ...stripDimensions(artwork),
+    ...stripSizeAndYear(artwork),
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
   }));
