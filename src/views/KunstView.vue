@@ -188,6 +188,12 @@ const techniques = [
       'Holzschnitte verbinden traditionelle Handwerkskunst mit modernem künstlerischem Ausdruck.',
     image: '/assets/jutta_horn_art_11.jpg',
   },
+  {
+    name: 'Experimentelle Fotografie',
+    description:
+      'Experimentelle Belichtungstechniken und digitale Schichtungen erweitern den fotografischen Blick und verbinden Realität mit freier Bildgestaltung.',
+    image: '/assets/experimentelle-fotografie.jpg',
+  },
 ];
 
 const handleImageError = () => {
