@@ -122,9 +122,6 @@
                 <p class="text-jutta-600 mb-2">
                   {{ work.technique }}
                 </p>
-                <p class="text-sm text-jutta-500">
-                  {{ work.year }}
-                </p>
               </v-card-text>
             </v-card>
           </v-col>
@@ -197,21 +194,18 @@ const imageLoaded = ref(true);
 
 const featuredWorks = [
   {
-    title: 'Kunstwerk 1',
+    title: 'Nebelufer',
     technique: 'Öl auf Leinwand',
-    year: '2022',
     image: '/assets/jutta_horn_art_1.jpg',
   },
   {
-    title: 'Kunstwerk 2',
+    title: 'Graue Weite',
     technique: 'Mischtechnik',
-    year: '2022',
     image: '/assets/jutta_horn_art_2.jpg',
   },
   {
-    title: 'Kunstwerk 3',
-    technique: 'Aquarell',
-    year: '2022',
+    title: 'Lichtband',
+    technique: 'Öl auf Leinwand',
     image: '/assets/jutta_horn_art_3.jpg',
   },
 ];
