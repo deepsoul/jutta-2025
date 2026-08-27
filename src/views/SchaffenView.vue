@@ -131,7 +131,7 @@
                   {{ work.technique }}
                 </p>
                 <p class="text-sm text-jutta-500 mb-2">
-                  {{ work.year }} • {{ work.size }}
+                  {{ work.year }}
                 </p>
                 <p class="text-sm text-jutta-700 line-clamp-2">
                   {{ work.description }}

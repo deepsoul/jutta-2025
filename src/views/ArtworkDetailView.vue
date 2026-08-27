@@ -55,10 +55,6 @@
                   <span class="meta-value">{{ artwork.year }}</span>
                 </div>
                 <div class="meta-item">
-                  <span class="meta-label">Format:</span>
-                  <span class="meta-value">{{ artwork.size }}</span>
-                </div>
-                <div class="meta-item">
                   <span class="meta-label">Kategorie:</span>
                   <span class="meta-value">{{ artwork.category }}</span>
                 </div>
