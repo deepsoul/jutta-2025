@@ -240,6 +240,9 @@
 <script setup lang="ts">
 import {ref} from 'vue';
 
+/** PHP-Skript auf All-Inkl (Subdomain, bleibt nach DNS-Umstellung von www). */
+const CONTACT_FORM_URL = 'https://form.juttahorn.de/contact-form.php';
+
 const form = ref({
   name: '',
   email: '',
@@ -354,8 +357,7 @@ const submitForm = async () => {
   formLoading.value = true;
 
   try {
-    // Send to PHP script on www.juttahorn.de
-    const response = await fetch('https://www.juttahorn.de/contact-form.php', {
+    const response = await fetch(CONTACT_FORM_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
