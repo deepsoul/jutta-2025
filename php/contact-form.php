@@ -1,11 +1,13 @@
 <?php
 /**
  * Jutta Horn Kontaktformular - E-Mail-Versand
- * Für www.juttahorn.de
+ * Host: form.juttahorn.de (All-Inkl Webspace)
  */
 
 // CORS-Header für Cross-Domain-Requests
 $allowedOrigins = [
+    'https://juttahorn.de',
+    'https://www.juttahorn.de',
     'https://juttahorn-2025-relaunch.vercel.app',
     'http://localhost:3000',
     'http://localhost:3001',
