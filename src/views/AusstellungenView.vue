@@ -202,12 +202,23 @@ type Exhibition = {
 const currentExhibitions: Exhibition[] = [
   {
     id: 1,
-    title: 'Ausstellung Rathaus Weissach',
-    location: 'Rathaus Weissach',
-    dates: '01.09.2026 - 14.09.2026',
+    title: 'ANDERSGLEICH / GLEICHANDERS – Mitgliederausstellung Kulturforum',
+    location: 'Rutesheimer Rathaus, Leonberger Straße 15',
+    dates: '22.11.2026 - 07.01.2027',
     description:
-      'Ausstellung vom 01.09.2026 bis 14.09.2026. Vernissage am 28.08.2026 im Rathaus Weissach.',
+      'Ist anders gleich, gleich anders? Kann im Anderen Gleiches zu finden sein? Was wenn Gleiches sich anders offenbart? Mitgliederausstellung des Kulturforums mit unterschiedlichen Ausdrucksformen und Materialien. Vernissage am Sonntag, 22.11.2026 um 11:15 Uhr.',
+    website:
+      'https://www.kulturforum-rutesheim.de/veranstaltungsseite/-andersgleich%2Fgleichanders',
     image: '/assets/ausstellung-1.jpg',
+  },
+  {
+    id: 2,
+    title: 'Zeitlose Schönheit',
+    location: 'Atelier Jutta Horn, Hamburg',
+    dates: 'dauerhaft',
+    description:
+      'Eine intime Präsentation neuer Arbeiten in meinem eigenen Atelier für Freunde und Sammler.',
+    image: '/assets/ausstellung-4.jpg',
   },
 ];
 
@@ -223,6 +234,7 @@ const pastExhibitions: Exhibition[] = [
       'https://www.weissach.de/weissach-buerger/leben-wohnen/veranstaltungskalender/3137/vernissage',
     image: '/assets/ausstellung-1.jpg',
   },
+
   {
     id: 2,
     title: 'KUNSTAUSSTELLUNG "Retrospektive"',
@@ -231,24 +243,6 @@ const pastExhibitions: Exhibition[] = [
     description:
       'Jutta Horn & Gerda Steimle - Vernissage am 07.04.2024 um 11:15 Uhr. Eine umfassende Retrospektive des künstlerischen Schaffens.',
     image: '/assets/retrospektive-2024.jpg',
-  },
-  {
-    id: 3,
-    title: 'Zeitlose Schönheit',
-    location: 'Atelier Jutta Horn, Hamburg',
-    dates: 'dauerhaft',
-    description:
-      'Eine intime Präsentation neuer Arbeiten in meinem eigenen Atelier für Freunde und Sammler.',
-    image: '/assets/ausstellung-4.jpg',
-  },
-  {
-    id: 4,
-    title: 'Aquarelle und Ölbilder',
-    location: 'Kunsthalle Bremen',
-    dates: 'Februar - April 2022',
-    description:
-      'Teilnahme an der Gruppenausstellung "Frauen in der Kunst" mit einer Auswahl meiner Aquarell- und Ölbilder.',
-    image: '/assets/ausstellung-4.jpg',
   },
 ];
 
