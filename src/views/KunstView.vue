@@ -135,8 +135,8 @@
                   Lebenserfahrung
                 </h3>
                 <p class="jutta-text">
-                  75 Jahre voller Erlebnisse, Begegnungen und Erkenntnisse
-                  prägen meine künstlerische Sicht auf die Welt.
+                  {{ ageYears }} Jahre voller Erlebnisse, Begegnungen und
+                  Erkenntnisse prägen meine künstlerische Sicht auf die Welt.
                 </p>
               </div>
               <div>
@@ -157,6 +157,25 @@
 </template>
 
 <script setup lang="ts">
+const BIRTH_YEAR = 1948;
+const BIRTH_MONTH = 10; // November (0-basiert)
+const BIRTH_DAY = 6;
+
+const ageFromBirthdate = (now = new Date()): number => {
+  let age = now.getFullYear() - BIRTH_YEAR;
+  const birthdayReachedThisYear =
+    now.getMonth() > BIRTH_MONTH ||
+    (now.getMonth() === BIRTH_MONTH && now.getDate() >= BIRTH_DAY);
+
+  if (!birthdayReachedThisYear) {
+    age -= 1;
+  }
+
+  return age;
+};
+
+const ageYears = ageFromBirthdate();
+
 const techniques = [
   {
     name: 'Malerei',
