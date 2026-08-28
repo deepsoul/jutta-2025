@@ -202,6 +202,16 @@ type Exhibition = {
 const currentExhibitions: Exhibition[] = [
   {
     id: 1,
+    title: 'ANDERSGLEICH / GLEICHANDERS – Mitgliederausstellung Kulturforum',
+    location: 'Rutesheimer Rathaus, Leonberger Straße 15',
+    dates: '22.11.2026 - 07.01.2027',
+    description:
+      'Ist anders gleich, gleich anders? Kann im Anderen Gleiches zu finden sein? Was wenn Gleiches sich anders offenbart? Mitgliederausstellung des Kulturforums mit unterschiedlichen Ausdrucksformen und Materialien. Vernissage am Sonntag, 22.11.2026 um 11:15 Uhr.',
+    website: 'https://www.kulturforum-rutesheim.de',
+    image: '/assets/ausstellung-andersgleich.jpg',
+  },
+  {
+    id: 2,
     title: 'Ausstellung Rathaus Weissach',
     location: 'Rathaus Weissach',
     dates: '01.09.2026 - 14.09.2026',
